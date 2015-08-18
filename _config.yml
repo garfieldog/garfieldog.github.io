@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: Mew
+subtitle: Woof
+description: 只有猪肉卷是永恒的
+author: Garfieldog
+language: zh-Hans
+timezone: Asia/Chongqing
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://garfieldog.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,7 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: next
+
+avatar: /images/avatar.png
+duoshuo_shortname: garfieldog-io
+baidu_analytics: 97f0dac1ada89eb3d1c2f1c9780b85bd
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
