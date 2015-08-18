@@ -68,6 +68,15 @@ theme: next
 avatar: /images/avatar.png
 duoshuo_shortname: garfieldog-io
 baidu_analytics: 97f0dac1ada89eb3d1c2f1c9780b85bd
+google_site_verification: QYpQQzl-sbN6NxEk_MAaDYrRCpo8nPhtZfTLogFsGnk
+creative_commons: by-nc-sa
+since: 2015
+
+social:
+  GitHub: https://github.com/garfieldog
+
+plugins: 
+- hexo-math
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
