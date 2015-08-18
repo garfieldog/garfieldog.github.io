@@ -3,6 +3,8 @@ date: 2015-08-18 10:56:14
 categories: [Mew]
 ---
 
+## 猪肉卷
+
 > 我见过你们人类难以置信的事，
 > 我见过太空飞船在猎户星座的边缘被击中，
 > 燃起熊熊火光。
@@ -13,5 +15,34 @@ categories: [Mew]
 > ……
 > 哎这炸酱面该下锅了吧！？
 
+## 千层面
+
 $ E = mc^2 $
 
+
+## 披萨
+
+``` python
+def partition(arr, start, end):
+    pivot = arr[start]
+    arr[end], arr[start] = arr[start], arr[end]
+    i = start
+    for j in xrange(start, end, 1):
+        if arr[j] <= pivot:
+            if i != j:
+                arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+    arr[end], arr[i] = arr[i], arr[end]
+    return i
+
+
+def qsort_r(arr, start, end):
+    if start < end:
+        p = partition(arr, start, end)
+        qsort_r(arr, start, p - 1)
+        qsort_r(arr, p + 1, end)
+
+
+def qsort(arr):
+    qsort_r(arr, 0, len(arr) - 1)
+```
