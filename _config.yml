@@ -72,4 +72,6 @@ baidu_analytics: 97f0dac1ada89eb3d1c2f1c9780b85bd
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: git@github.com:garfieldog/garfieldog.github.io.git
+  branch: master
