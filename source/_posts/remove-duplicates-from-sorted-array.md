@@ -23,7 +23,7 @@ categories: [编程题]
 
 ## 代码
 
-#### Python
+### Python
 ```python
 class Solution:
     def removeDuplicates(self, nums):
@@ -31,7 +31,7 @@ class Solution:
             return 0
         i = 1
         for n in nums[1:]:
-            if n != nums[i]:
+            if n != nums[i - 1]:
                 nums[i] = n
                 i += 1
         return i
