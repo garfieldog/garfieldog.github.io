@@ -73,7 +73,13 @@ creative_commons: by-nc-sa
 since: 2015
 
 social:
-  GitHub: https://github.com/garfieldog
+  github: https://github.com/garfieldog
+  zhihu: http://www.zhihu.com/people/garfieldog
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 20
 
 plugins: 
 - hexo-math
