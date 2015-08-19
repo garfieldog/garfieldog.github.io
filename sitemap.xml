@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/19/longest-consecutive-sequence/</loc>
+    <lastmod>2015-08-19T16:21:04.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/19/median-of-two-sorted-arrays/</loc>
     <lastmod>2015-08-19T04:42:27.000Z</lastmod>
   </url>

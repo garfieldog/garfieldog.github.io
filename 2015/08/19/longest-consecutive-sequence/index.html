@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Array,Leetcode,哈希表," />
 
 
 
@@ -41,28 +41,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="猪肉卷
-我见过你们人类难以置信的事，我见过太空飞船在猎户星座的边缘被击中，燃起熊熊火光。我见过Ｃ射线，划过“唐怀瑟之门”那幽暗的宇宙空间。然而所有的这些时刻都将消失在时间里，就像……泪水……消失在雨中一样。……哎这炸酱面该下锅了吧！？
-
-千层面$ E = mc^2 $
-披萨12345678910111213141516171819202122def partition(arr, start, en">
+<meta name="description" content="描述
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
+For example,Given [100, 4, 200, 1, 3, 2],The longest consecutive elements sequence is [1, 2, 3, 4]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mew">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/18/mew/index.html">
+<meta property="og:title" content="Leetcode解题-最长连续序列">
+<meta property="og:url" content="http://garfieldog.github.io/2015/08/19/longest-consecutive-sequence/index.html">
 <meta property="og:site_name" content="Mew">
-<meta property="og:description" content="猪肉卷
-我见过你们人类难以置信的事，我见过太空飞船在猎户星座的边缘被击中，燃起熊熊火光。我见过Ｃ射线，划过“唐怀瑟之门”那幽暗的宇宙空间。然而所有的这些时刻都将消失在时间里，就像……泪水……消失在雨中一样。……哎这炸酱面该下锅了吧！？
-
-千层面$ E = mc^2 $
-披萨12345678910111213141516171819202122def partition(arr, start, en">
-<meta property="og:updated_time" content="2015-08-18T07:27:52.000Z">
+<meta property="og:description" content="描述
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
+For example,Given [100, 4, 200, 1, 3, 2],The longest consecutive elements sequence is [1, 2, 3, 4]">
+<meta property="og:updated_time" content="2015-08-19T16:21:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mew">
-<meta name="twitter:description" content="猪肉卷
-我见过你们人类难以置信的事，我见过太空飞船在猎户星座的边缘被击中，燃起熊熊火光。我见过Ｃ射线，划过“唐怀瑟之门”那幽暗的宇宙空间。然而所有的这些时刻都将消失在时间里，就像……泪水……消失在雨中一样。……哎这炸酱面该下锅了吧！？
-
-千层面$ E = mc^2 $
-披萨12345678910111213141516171819202122def partition(arr, start, en">
+<meta name="twitter:title" content="Leetcode解题-最长连续序列">
+<meta name="twitter:description" content="描述
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
+For example,Given [100, 4, 200, 1, 3, 2],The longest consecutive elements sequence is [1, 2, 3, 4]">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -72,7 +66,7 @@
   };
 </script>
 
-  <title> Mew | Mew </title>
+  <title> Leetcode解题-最长连续序列 | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -198,7 +192,7 @@
           
           
             
-              Mew
+              Leetcode解题-最长连续序列
             
           
         </h1>
@@ -207,8 +201,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-18T10:56:14+08:00" content="2015-08-18">
-            2015-08-18
+          <time itemprop="dateCreated" datetime="2015-08-19T23:51:57+08:00" content="2015-08-19">
+            2015-08-19
           </time>
         </span>
 
@@ -217,8 +211,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Mew/" itemprop="url" rel="index">
-                  <span itemprop="name">Mew</span>
+                <a href="/categories/编程题/" itemprop="url" rel="index">
+                  <span itemprop="name">编程题</span>
                 </a>
               </span>
 
@@ -233,8 +227,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/18/mew/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/18/mew/" itemprop="commentsCount"></span>
+              <a href="/2015/08/19/longest-consecutive-sequence/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/19/longest-consecutive-sequence/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -248,27 +242,40 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="猪肉卷">猪肉卷</h2><blockquote>
-<p>我见过你们人类难以置信的事，<br>我见过太空飞船在猎户星座的边缘被击中，<br>燃起熊熊火光。<br>我见过Ｃ射线，<br>划过“唐怀瑟之门”那幽暗的宇宙空间。<br>然而所有的这些时刻都将消失在时间里，<br>就像……泪水……消失在雨中一样。<br>……<br>哎这炸酱面该下锅了吧！？</p>
+        <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
+<p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
+<p>For example,<br>Given [100, 4, 200, 1, 3, 2],<br>The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.</p>
+<p>Your algorithm should run in O(n) complexity.</p>
 </blockquote>
-<h2 id="千层面">千层面</h2><p>$ E = mc^2 $</p>
-<h2 id="披萨">披萨</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">partition</span><span class="params">(arr, start, end)</span>:</span></span><br><span class="line">    pivot = arr[start]</span><br><span class="line">    arr[end], arr[start] = arr[start], arr[end]</span><br><span class="line">    i = start</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> xrange(start, end, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> arr[j] &lt;= pivot:</span><br><span class="line">            <span class="keyword">if</span> i != j:</span><br><span class="line">                arr[i], arr[j] = arr[j], arr[i]</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">    arr[end], arr[i] = arr[i], arr[end]</span><br><span class="line">    <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">qsort_r</span><span class="params">(arr, start, end)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> start &lt; end:</span><br><span class="line">        p = partition(arr, start, end)</span><br><span class="line">        qsort_r(arr, start, p - <span class="number">1</span>)</span><br><span class="line">        qsort_r(arr, p + <span class="number">1</span>, end)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">qsort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    qsort_r(arr, <span class="number">0</span>, len(arr) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>给定一个未排序的整形数组，求出<code>最长连续元素序列</code>的长度。比如，给定数组<code>[100, 4, 200, 1, 3, 2]</code>，最长连续子序列为<code>[1, 2, 3, 4]</code>，长度为4。要求时间复杂度O(n)。</p>
+<h2 id="分析">分析</h2><p>要求O(n)时间复杂度，就不能对数组排序，可以尝试用哈希表记录出现的元素。然后第二次遍历原数组，对每个元素，采用从中间向两边扩散的方式查找它的<code>相邻数</code>在不在哈希表中，一旦断掉就停止扩张，记录最长的序列长度。注意，要保证时间是O(n)的，就要记录元素有没有被<code>使用过</code>，被使用过的元素就不在进行判断，保证一个元素只被访问一次。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># @param &#123;integer[]&#125; nums</span></span><br><span class="line">    <span class="comment"># @return &#123;integer&#125;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestConsecutive</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        d = &#123;n: <span class="keyword">True</span> <span class="keyword">for</span> n <span class="keyword">in</span> nums&#125;</span><br><span class="line">        cur_max_len = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> d.get(n):</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            d[n] = <span class="keyword">False</span></span><br><span class="line">            i = <span class="number">1</span></span><br><span class="line">            cur_num = n + <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> d.get(cur_num):</span><br><span class="line">                d[cur_num] = <span class="keyword">False</span></span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                cur_num += <span class="number">1</span></span><br><span class="line">            cur_num = n - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> d.get(cur_num):</span><br><span class="line">                d[cur_num] = <span class="keyword">False</span></span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">                cur_num -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> i &gt; cur_max_len:</span><br><span class="line">                cur_max_len = i</span><br><span class="line">        <span class="keyword">return</span> cur_max_len</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/哈希表/" rel="tag">#哈希表</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/18/remove-duplicates-from-sorted-array/" rel="prev">Leetcode解题-去除有序数组中的重复元素</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/19/median-of-two-sorted-arrays/" rel="next">Leetcode解题-找出两个有序数组的中位数</a>
             
           </div>
         </div>
@@ -283,10 +290,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/18/mew/"
-     data-title="Mew"
+        <div class="ds-share flat" data-thread-key="2015/08/19/longest-consecutive-sequence/"
+     data-title="Leetcode解题-最长连续序列"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/18/mew/">
+     data-url="http://garfieldog.github.io/2015/08/19/longest-consecutive-sequence/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -316,8 +323,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/18/mew/"
-                   data-title="Mew" data-url="http://garfieldog.github.io/2015/08/18/mew/">
+              <div class="ds-thread" data-thread-key="2015/08/19/longest-consecutive-sequence/"
+                   data-title="Leetcode解题-最长连续序列" data-url="http://garfieldog.github.io/2015/08/19/longest-consecutive-sequence/">
               </div>
             
           </div>
@@ -422,7 +429,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#猪肉卷"><span class="nav-number">1.</span> <span class="nav-text">猪肉卷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#千层面"><span class="nav-number">2.</span> <span class="nav-text">千层面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#披萨"><span class="nav-number">3.</span> <span class="nav-text">披萨</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
