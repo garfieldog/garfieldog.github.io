@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/20/3sum-closest/</loc>
+    <lastmod>2015-08-20T05:54:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/20/3-sum/</loc>
     <lastmod>2015-08-20T04:05:44.000Z</lastmod>
   </url>
