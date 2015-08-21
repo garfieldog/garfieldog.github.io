@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/21/next-permutation/</loc>
+    <lastmod>2015-08-21T04:27:10.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/21/remove-element/</loc>
+    <lastmod>2015-08-21T03:04:19.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/21/4-sum/</loc>
+    <lastmod>2015-08-21T02:36:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/20/3sum-closest/</loc>
     <lastmod>2015-08-20T05:54:02.000Z</lastmod>
   </url>
