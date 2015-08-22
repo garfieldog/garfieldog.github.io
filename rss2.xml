@@ -7,8 +7,31 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Sat, 22 Aug 2015 08:46:37 GMT</pubDate>
+    <pubDate>Sat, 22 Aug 2015 10:02:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Valid Sudoku]]></title>
+      <link>http://garfieldog.github.io/2015/08/22/valid-sudoku/</link>
+      <guid>http://garfieldog.github.io/2015/08/22/valid-sudoku/</guid>
+      <pubDate>Sat, 22 Aug 2015 08:50:10 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
+<p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
+<p><img src="/images/sudoku.png" alt="sudoku.png"></p>
+<p>A partially filled sudoku which is valid.</p>
+<p>Note:<br>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</p>
+</blockquote>
+<p>判断一个数独棋盘状态是不是合法（不需要可解）。</p>
+<h2 id="分析">分析</h2><p>可以分三次遍历棋盘，分别检查行、列、和小九宫格是否合法(同一数字最多出现一次)。时间复杂度<code>O(n^2)</code>，空间复杂度<code>O(n)</code>。还可以把三次遍历合并为一次，空间复杂度增加至<code>O(n^2)</code>，时间复杂度系数项减小。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        n = len(board)</span><br><span class="line">        used_cols = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        used_cells = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            used_row = [<span class="keyword">False</span>] * n</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] != <span class="string">'.'</span>:</span><br><span class="line">                    k = int(board[i][j]) - <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> self.check(used_row, k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cols[j], k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cells[j / <span class="number">3</span> * <span class="number">3</span> + i / <span class="number">3</span>], k):</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, flags, k)</span>:</span></span><br><span class="line">        valid = <span class="keyword">not</span> flags[k]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flags[k]:</span><br><span class="line">            flags[k] = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> valid</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/22/valid-sudoku/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Permutation Sequence]]></title>
