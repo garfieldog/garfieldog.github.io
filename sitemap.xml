@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/22/trapping-rain-water/</loc>
+    <lastmod>2015-08-22T11:19:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/22/valid-sudoku/</loc>
     <lastmod>2015-08-22T10:02:13.000Z</lastmod>
   </url>
