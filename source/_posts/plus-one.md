@@ -1,4 +1,4 @@
-title: plus-one
+title: Leetcode解题-Plus One
 date: 2015-08-24 13:57:51
 tags: [Leetcode, Array]
 categories: [编程题]
