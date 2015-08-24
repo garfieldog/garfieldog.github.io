@@ -7,8 +7,84 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Sat, 22 Aug 2015 11:19:40 GMT</pubDate>
+    <pubDate>Mon, 24 Aug 2015 07:36:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Gary Code]]></title>
+      <link>http://garfieldog.github.io/2015/08/24/gary-code/</link>
+      <guid>http://garfieldog.github.io/2015/08/24/gary-code/</guid>
+      <pubDate>Mon, 24 Aug 2015 06:29:49 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
+<p>Given]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
+<p>Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.</p>
+<p>For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
+<p>00 - 0<br>01 - 1<br>11 - 3<br>10 - 2<br>Note:<br>For a given n, a gray code sequence is not uniquely defined.</p>
+<p>For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.</p>
+<p>For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>格雷码有数学公式：第n个格雷码<code>G(n)= n xor (n / 2)</code>，因此只要顺序给出从0到<code>2^n -1</code>个格雷码就可以。</p>
+<p>数学公式虽然精妙，但如果你不知道这个公式，是很难现场推出来的。还可以从定义出发，递归给出格雷码:</p>
+<ol>
+<li>当n=1时，格雷码序列是<code>L(1) = [0, 1]</code></li>
+<li>当n&gt;1时，格雷码序列是 <code>0前缀 ++ L(n - 1)</code> 和<code>1前缀 ++ reverse(L(n - 1))</code>的拼接。</li>
+</ol>
+<h2 id="代码">代码</h2><h3 id="公式法">公式法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grayCode</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        rs = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">2</span> ** n):</span><br><span class="line">            rs.append(i ^ (i / <span class="number">2</span>))</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
+<h3 id="递归法">递归法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grayCode</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        rs = [<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            h = <span class="number">1</span> &lt;&lt; i</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(rs) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">                rs.append(h | rs[j])</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/24/gary-code/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Climbing Stairs]]></title>
+      <link>http://garfieldog.github.io/2015/08/24/climbing-stairs/</link>
+      <guid>http://garfieldog.github.io/2015/08/24/climbing-stairs/</guid>
+      <pubDate>Mon, 24 Aug 2015 06:14:27 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either clim]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>稍一分析就知道答案是斐波那契数<code>F(n + 1)</code>。因为<code>f(1) = 1, f(2) = 2</code>，而<code>n &gt; 2</code>时，有多少种走法呢，可以分解为：</p>
+<ol>
+<li>如果第一次走一步，那么有<code>f(n-1)</code>种走法。</li>
+<li>如果第一次走两步，那么有<code>f(n-2)</code>种走法。</li>
+<li>因此<code>f(n) = f(n-1) + f(n-2)</code>，故<code>f(n)</code>是第<code>n+1</code>个斐波那契数。</li>
+</ol>
+<p>使用动态规划算法，时间复杂度<code>O(n)</code>，空间复杂度<code>O(1)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> n &lt;= <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> n</span><br><span class="line">        a, b = <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n - <span class="number">2</span>):</span><br><span class="line">            a, b = b, a + b</span><br><span class="line">        <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/24/climbing-stairs/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Plus One]]></title>
+      <link>http://garfieldog.github.io/2015/08/24/plus-one/</link>
+      <guid>http://garfieldog.github.io/2015/08/24/plus-one/</guid>
+      <pubDate>Mon, 24 Aug 2015 05:57:51 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
+<p>The digits ]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
+<p>The digits are stored such that the most significant digit is at the head of the list.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>没什么好分析的，循环进位。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plusOne</span><span class="params">(self, digits)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type digits: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        carry = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(digits) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            s = digits[i] + carry</span><br><span class="line">            carry, r = divmod(s, <span class="number">10</span>)</span><br><span class="line">            digits[i] = r</span><br><span class="line">        <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">            digits.insert(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> digits</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/24/plus-one/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Trapping Rain Water]]></title>

@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/24/gary-code/</loc>
+    <lastmod>2015-08-24T07:36:09.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/24/climbing-stairs/</loc>
+    <lastmod>2015-08-24T06:28:06.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/24/plus-one/</loc>
+    <lastmod>2015-08-24T06:27:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/22/trapping-rain-water/</loc>
     <lastmod>2015-08-22T11:19:40.000Z</lastmod>
   </url>
