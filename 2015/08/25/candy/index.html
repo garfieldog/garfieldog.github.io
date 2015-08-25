@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,数独,矩阵," />
+  <meta name="keywords" content="Array,Leetcode,动态规划," />
 
 
 
@@ -46,28 +46,24 @@
 
 
 <meta name="description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
+There are N children standing in a line. Each child is assigned a rating value.
+You are giving candies to these children subjected to the following requirements:
+Each child must have at least one c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Valid Sudoku">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/22/valid-sudoku/index.html">
+<meta property="og:title" content="Leetcode解题-Candy">
+<meta property="og:url" content="http://garfieldog.github.io/2015/08/25/candy/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
-<meta property="og:image" content="http://garfieldog.github.io/images/sudoku.png">
-<meta property="og:updated_time" content="2015-08-22T10:02:13.000Z">
+There are N children standing in a line. Each child is assigned a rating value.
+You are giving candies to these children subjected to the following requirements:
+Each child must have at least one c">
+<meta property="og:updated_time" content="2015-08-25T03:30:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Valid Sudoku">
+<meta name="twitter:title" content="Leetcode解题-Candy">
 <meta name="twitter:description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
+There are N children standing in a line. Each child is assigned a rating value.
+You are giving candies to these children subjected to the following requirements:
+Each child must have at least one c">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +73,7 @@ A partially filled sudoku">
   };
 </script>
 
-  <title> Leetcode解题-Valid Sudoku | Mew </title>
+  <title> Leetcode解题-Candy | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -203,7 +199,7 @@ A partially filled sudoku">
           
           
             
-              Leetcode解题-Valid Sudoku
+              Leetcode解题-Candy
             
           
         </h1>
@@ -212,8 +208,8 @@ A partially filled sudoku">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-22T16:50:10+08:00" content="2015-08-22">
-            2015-08-22
+          <time itemprop="dateCreated" datetime="2015-08-25T10:36:28+08:00" content="2015-08-25">
+            2015-08-25
           </time>
         </span>
 
@@ -238,8 +234,8 @@ A partially filled sudoku">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/22/valid-sudoku/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/22/valid-sudoku/" itemprop="commentsCount"></span>
+              <a href="/2015/08/25/candy/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/25/candy/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -254,15 +250,17 @@ A partially filled sudoku">
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
-<p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
-<p><img src="/images/sudoku.png" alt="sudoku.png"></p>
-<p>A partially filled sudoku which is valid.</p>
-<p>Note:<br>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</p>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving candies to these children subjected to the following requirements:</p>
+<p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
 </blockquote>
-<p>判断一个数独棋盘状态是不是合法（不需要可解）。</p>
-<h2 id="分析">分析</h2><p>可以分三次遍历棋盘，分别检查行、列、和小九宫格是否合法(同一数字最多出现一次)。时间复杂度<code>O(n^2)</code>，空间复杂度<code>O(n)</code>。还可以把三次遍历合并为一次，空间复杂度增加至<code>O(n^2)</code>，时间复杂度系数项减小。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        n = len(board)</span><br><span class="line">        used_cols = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        used_cells = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            used_row = [<span class="keyword">False</span>] * n</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] != <span class="string">'.'</span>:</span><br><span class="line">                    k = int(board[i][j]) - <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> self.check(used_row, k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cols[j], k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cells[j / <span class="number">3</span> * <span class="number">3</span> + i / <span class="number">3</span>], k):</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, flags, k)</span>:</span></span><br><span class="line">        valid = <span class="keyword">not</span> flags[k]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flags[k]:</span><br><span class="line">            flags[k] = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> valid</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>有一定难度。对于某个位置<code>i</code>上的小孩，它的糖果数取决于他自己和左右邻居的关系。设<code>ratings</code>数组为<code>R</code>，分配给小孩的糖果数为数组<code>C</code>。我们可以这样来考虑这个问题，拆分为两个步骤：</p>
+<ol>
+<li>首先，如果只要求<code>C[i] &gt; C[i-1]</code> iff <code>R[i] &gt; R[i-1]</code>，也就是说只考虑每个小孩左手边的小孩，那么如果<code>R[i] &gt; R[i-1]</code>则<code>C[i] = C[i-1] + 1</code>，否则<code>C[i] = 1</code>。</li>
+<li>然后我们再考虑加上右手边小孩的限制，如果<code>R[i] &gt; R[i+1]</code>，则<code>C[i] = max(C[i+1] + 1, C[i])</code>。</li>
+</ol>
+<p>这样一来，考虑到上面被分解的两个问题内部的互相依赖情况，我们就可以用两个循环分别从左到右、从右到左遍历数组，得到时间<code>O(n)</code>，空间<code>O(n)</code>的算法。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">candy</span><span class="params">(self, R)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type R: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        n = len(R)</span><br><span class="line">        C = [<span class="number">1</span>] * n</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>, n):</span><br><span class="line">            <span class="keyword">if</span> R[i] &gt; R[i - <span class="number">1</span>]:</span><br><span class="line">                C[i] = C[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> R[i] &gt; R[i + <span class="number">1</span>]:</span><br><span class="line">                C[i] = max(C[i + <span class="number">1</span>] + <span class="number">1</span>, C[i])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum(C)</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -271,11 +269,11 @@ A partially filled sudoku">
       
         <div class="post-tags">
           
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/数独/" rel="tag">#数独</a>
-          
-            <a href="/tags/矩阵/" rel="tag">#矩阵</a>
+            <a href="/tags/动态规划/" rel="tag">#动态规划</a>
           
         </div>
       
@@ -284,13 +282,13 @@ A partially filled sudoku">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/22/trapping-rain-water/" rel="prev">Leetcode解题-Trapping Rain Water</a>
+              <a href="/2015/08/25/single-number/" rel="prev">Leetcode解题-Single Number</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/22/permutation-sequence/" rel="next">Leetcode解题-Permutation Sequence</a>
+              <a href="/2015/08/24/gas-station/" rel="next">Leetcode解题-Gas Station</a>
             
           </div>
         </div>
@@ -305,10 +303,10 @@ A partially filled sudoku">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/22/valid-sudoku/"
-     data-title="Leetcode解题-Valid Sudoku"
+        <div class="ds-share flat" data-thread-key="2015/08/25/candy/"
+     data-title="Leetcode解题-Candy"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/22/valid-sudoku/">
+     data-url="http://garfieldog.github.io/2015/08/25/candy/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -338,8 +336,8 @@ A partially filled sudoku">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/22/valid-sudoku/"
-                   data-title="Leetcode解题-Valid Sudoku" data-url="http://garfieldog.github.io/2015/08/22/valid-sudoku/">
+              <div class="ds-thread" data-thread-key="2015/08/25/candy/"
+                   data-title="Leetcode解题-Candy" data-url="http://garfieldog.github.io/2015/08/25/candy/">
               </div>
             
           </div>

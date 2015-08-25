@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,数独,矩阵," />
+  <meta name="keywords" content="Array,Leetcode,贪心法," />
 
 
 
@@ -46,28 +46,21 @@
 
 
 <meta name="description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
+There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to it">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Valid Sudoku">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/22/valid-sudoku/index.html">
+<meta property="og:title" content="Leetcode解题-Gas Station">
+<meta property="og:url" content="http://garfieldog.github.io/2015/08/24/gas-station/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
-<meta property="og:image" content="http://garfieldog.github.io/images/sudoku.png">
-<meta property="og:updated_time" content="2015-08-22T10:02:13.000Z">
+There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to it">
+<meta property="og:updated_time" content="2015-08-25T02:35:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Valid Sudoku">
+<meta name="twitter:title" content="Leetcode解题-Gas Station">
 <meta name="twitter:description" content="描述
-Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
-The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.
-
-A partially filled sudoku">
+There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to it">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +70,7 @@ A partially filled sudoku">
   };
 </script>
 
-  <title> Leetcode解题-Valid Sudoku | Mew </title>
+  <title> Leetcode解题-Gas Station | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -203,7 +196,7 @@ A partially filled sudoku">
           
           
             
-              Leetcode解题-Valid Sudoku
+              Leetcode解题-Gas Station
             
           
         </h1>
@@ -212,8 +205,8 @@ A partially filled sudoku">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-22T16:50:10+08:00" content="2015-08-22">
-            2015-08-22
+          <time itemprop="dateCreated" datetime="2015-08-24T18:18:32+08:00" content="2015-08-24">
+            2015-08-24
           </time>
         </span>
 
@@ -238,8 +231,8 @@ A partially filled sudoku">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/22/valid-sudoku/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/22/valid-sudoku/" itemprop="commentsCount"></span>
+              <a href="/2015/08/24/gas-station/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/gas-station/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -254,15 +247,21 @@ A partially filled sudoku">
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Determine if a Sudoku is valid, according to: <a href="http://sudoku.com.au/TheRules.aspx" target="_blank" rel="external">Sudoku Puzzles - The Rules</a>.</p>
-<p>The Sudoku board could be partially filled, where empty cells are filled with the character ‘.’.</p>
-<p><img src="/images/sudoku.png" alt="sudoku.png"></p>
-<p>A partially filled sudoku which is valid.</p>
-<p>Note:<br>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</p>
+<p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
+<p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
+<p>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.</p>
+<p>Note:<br>The solution is guaranteed to be unique.</p>
 </blockquote>
-<p>判断一个数独棋盘状态是不是合法（不需要可解）。</p>
-<h2 id="分析">分析</h2><p>可以分三次遍历棋盘，分别检查行、列、和小九宫格是否合法(同一数字最多出现一次)。时间复杂度<code>O(n^2)</code>，空间复杂度<code>O(n)</code>。还可以把三次遍历合并为一次，空间复杂度增加至<code>O(n^2)</code>，时间复杂度系数项减小。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidSudoku</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        n = len(board)</span><br><span class="line">        used_cols = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        used_cells = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            used_row = [<span class="keyword">False</span>] * n</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] != <span class="string">'.'</span>:</span><br><span class="line">                    k = int(board[i][j]) - <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> self.check(used_row, k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cols[j], k) <span class="keyword">or</span> \</span><br><span class="line">                       <span class="keyword">not</span> self.check(used_cells[j / <span class="number">3</span> * <span class="number">3</span> + i / <span class="number">3</span>], k):</span><br><span class="line">                            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(self, flags, k)</span>:</span></span><br><span class="line">        valid = <span class="keyword">not</span> flags[k]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> flags[k]:</span><br><span class="line">            flags[k] = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> valid</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>这道题等价于，对每个加油站，油的存量和到下一个加油站的消耗之差<code>diff[i] = gas[i] -cost[i]</code>这样一个循环数组，找到一个下标<code>x</code>，使得从<code>x</code>开始<code>diff[i]</code>的累加和永远非负。想到一个<code>O(n^2)</code>时间的算法很容易，但我们应该找到更好的。</p>
+<p>首先，有一个很重要的结论，如果 $\sum_{i=0}^{N-1} gas[i] - cost[i] &gt;= 0 $，则肯定有解。如果小于0，则一定无解。这个结论如何证明需要仔细想一想。然后，如何找到这个下标呢？这个问题其实满足贪心法的最优子结构：</p>
+<ol>
+<li>从第0个加油站开始，寻找第一个使得<code>sum(diff[i]) &lt; 0</code>的下标，如果找不到，则说明，第一个加油站就满足条件。</li>
+<li>找到这样的下标<code>i</code>，则说明<code>0..i</code>之间的加油站肯定不满足条件。可能的解只会在<code>i+1 ... N-1</code>之间。</li>
+<li>将<code>sum</code>清零，从<code>i+1</code>开始继续搜索diff累加和为负的下标<code>j</code>，找到则说明<code>i+1 ... j</code>之间的加油站都不符合条件。以此类推。</li>
+<li>最后判断全体的diff和是否非负，如果是，则按照之前的结论，肯定有解，这个解就是我们上面搜索过程中最后一个累加起始位置。</li>
+</ol>
+<p>时间复杂度<code>O(n)</code>，空间复杂度<code>O(1)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canCompleteCircuit</span><span class="params">(self, gas, cost)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type gas: List[int]</span><br><span class="line">        :type cost: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        x = <span class="number">0</span></span><br><span class="line">        n = len(gas)</span><br><span class="line">        cur_sum, total_sum = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            diff = gas[i] - cost[i]</span><br><span class="line">            cur_sum += diff</span><br><span class="line">            total_sum += diff</span><br><span class="line">            <span class="keyword">if</span> cur_sum &lt; <span class="number">0</span>:</span><br><span class="line">                cur_sum = <span class="number">0</span></span><br><span class="line">                x = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x <span class="keyword">if</span> total_sum &gt;= <span class="number">0</span> <span class="keyword">else</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -271,11 +270,11 @@ A partially filled sudoku">
       
         <div class="post-tags">
           
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/数独/" rel="tag">#数独</a>
-          
-            <a href="/tags/矩阵/" rel="tag">#矩阵</a>
+            <a href="/tags/贪心法/" rel="tag">#贪心法</a>
           
         </div>
       
@@ -284,13 +283,13 @@ A partially filled sudoku">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/22/trapping-rain-water/" rel="prev">Leetcode解题-Trapping Rain Water</a>
+              <a href="/2015/08/25/candy/" rel="prev">Leetcode解题-Candy</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/22/permutation-sequence/" rel="next">Leetcode解题-Permutation Sequence</a>
+              <a href="/2015/08/24/set-matrix-zeros/" rel="next">Leetcode解题-Set Matrix Zeros</a>
             
           </div>
         </div>
@@ -305,10 +304,10 @@ A partially filled sudoku">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/22/valid-sudoku/"
-     data-title="Leetcode解题-Valid Sudoku"
+        <div class="ds-share flat" data-thread-key="2015/08/24/gas-station/"
+     data-title="Leetcode解题-Gas Station"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/22/valid-sudoku/">
+     data-url="http://garfieldog.github.io/2015/08/24/gas-station/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -338,8 +337,8 @@ A partially filled sudoku">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/22/valid-sudoku/"
-                   data-title="Leetcode解题-Valid Sudoku" data-url="http://garfieldog.github.io/2015/08/22/valid-sudoku/">
+              <div class="ds-thread" data-thread-key="2015/08/24/gas-station/"
+                   data-title="Leetcode解题-Gas Station" data-url="http://garfieldog.github.io/2015/08/24/gas-station/">
               </div>
             
           </div>

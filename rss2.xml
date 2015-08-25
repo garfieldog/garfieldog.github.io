@@ -7,8 +7,84 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Mon, 24 Aug 2015 09:34:30 GMT</pubDate>
+    <pubDate>Tue, 25 Aug 2015 03:47:12 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Single Number]]></title>
+      <link>http://garfieldog.github.io/2015/08/25/single-number/</link>
+      <guid>http://garfieldog.github.io/2015/08/25/single-number/</guid>
+      <pubDate>Tue, 25 Aug 2015 03:32:03 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given an array of integers, every element appears twice except for one. Find that single one.</p>
+<p>Note]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given an array of integers, every element appears twice except for one. Find that single one.</p>
+<p>Note:<br>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>空间<code>O(n)</code>的算法很容易想，但是题目要求空间<code>O(1)</code>，这个就有一些奇技淫巧了，想到了就很容易，没想到还真是抓瞎。用<code>xor</code>操作的性质，给一个序列的数使用<code>xor</code>进行reduce，如果一个数出现偶数次，那么就跟没有出现过是一样的，也就是$ x \oplus y \oplus x = y $。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x ^ y, nums)</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/25/single-number/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Candy]]></title>
+      <link>http://garfieldog.github.io/2015/08/25/candy/</link>
+      <guid>http://garfieldog.github.io/2015/08/25/candy/</guid>
+      <pubDate>Tue, 25 Aug 2015 02:36:28 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving can]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>There are N children standing in a line. Each child is assigned a rating value.</p>
+<p>You are giving candies to these children subjected to the following requirements:</p>
+<p>Each child must have at least one candy.<br>Children with a higher rating get more candies than their neighbors.<br>What is the minimum candies you must give?</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>有一定难度。对于某个位置<code>i</code>上的小孩，它的糖果数取决于他自己和左右邻居的关系。设<code>ratings</code>数组为<code>R</code>，分配给小孩的糖果数为数组<code>C</code>。我们可以这样来考虑这个问题，拆分为两个步骤：</p>
+<ol>
+<li>首先，如果只要求<code>C[i] &gt; C[i-1]</code> iff <code>R[i] &gt; R[i-1]</code>，也就是说只考虑每个小孩左手边的小孩，那么如果<code>R[i] &gt; R[i-1]</code>则<code>C[i] = C[i-1] + 1</code>，否则<code>C[i] = 1</code>。</li>
+<li>然后我们再考虑加上右手边小孩的限制，如果<code>R[i] &gt; R[i+1]</code>，则<code>C[i] = max(C[i+1] + 1, C[i])</code>。</li>
+</ol>
+<p>这样一来，考虑到上面被分解的两个问题内部的互相依赖情况，我们就可以用两个循环分别从左到右、从右到左遍历数组，得到时间<code>O(n)</code>，空间<code>O(n)</code>的算法。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">candy</span><span class="params">(self, R)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type R: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        n = len(R)</span><br><span class="line">        C = [<span class="number">1</span>] * n</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>, n):</span><br><span class="line">            <span class="keyword">if</span> R[i] &gt; R[i - <span class="number">1</span>]:</span><br><span class="line">                C[i] = C[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> R[i] &gt; R[i + <span class="number">1</span>]:</span><br><span class="line">                C[i] = max(C[i + <span class="number">1</span>] + <span class="number">1</span>, C[i])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum(C)</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/25/candy/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Gas Station]]></title>
+      <link>http://garfieldog.github.io/2015/08/24/gas-station/</link>
+      <guid>http://garfieldog.github.io/2015/08/24/gas-station/</guid>
+      <pubDate>Mon, 24 Aug 2015 10:18:32 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
+<p>Y]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
+<p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
+<p>Return the starting gas station’s index if you can travel around the circuit once, otherwise return -1.</p>
+<p>Note:<br>The solution is guaranteed to be unique.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>这道题等价于，对每个加油站，油的存量和到下一个加油站的消耗之差<code>diff[i] = gas[i] -cost[i]</code>这样一个循环数组，找到一个下标<code>x</code>，使得从<code>x</code>开始<code>diff[i]</code>的累加和永远非负。想到一个<code>O(n^2)</code>时间的算法很容易，但我们应该找到更好的。</p>
+<p>首先，有一个很重要的结论，如果 $\sum_{i=0}^{N-1} gas[i] - cost[i] &gt;= 0 $，则肯定有解。如果小于0，则一定无解。这个结论如何证明需要仔细想一想。然后，如何找到这个下标呢？这个问题其实满足贪心法的最优子结构：</p>
+<ol>
+<li>从第0个加油站开始，寻找第一个使得<code>sum(diff[i]) &lt; 0</code>的下标，如果找不到，则说明，第一个加油站就满足条件。</li>
+<li>找到这样的下标<code>i</code>，则说明<code>0..i</code>之间的加油站肯定不满足条件。可能的解只会在<code>i+1 ... N-1</code>之间。</li>
+<li>将<code>sum</code>清零，从<code>i+1</code>开始继续搜索diff累加和为负的下标<code>j</code>，找到则说明<code>i+1 ... j</code>之间的加油站都不符合条件。以此类推。</li>
+<li>最后判断全体的diff和是否非负，如果是，则按照之前的结论，肯定有解，这个解就是我们上面搜索过程中最后一个累加起始位置。</li>
+</ol>
+<p>时间复杂度<code>O(n)</code>，空间复杂度<code>O(1)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canCompleteCircuit</span><span class="params">(self, gas, cost)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type gas: List[int]</span><br><span class="line">        :type cost: List[int]</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        x = <span class="number">0</span></span><br><span class="line">        n = len(gas)</span><br><span class="line">        cur_sum, total_sum = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            diff = gas[i] - cost[i]</span><br><span class="line">            cur_sum += diff</span><br><span class="line">            total_sum += diff</span><br><span class="line">            <span class="keyword">if</span> cur_sum &lt; <span class="number">0</span>:</span><br><span class="line">                cur_sum = <span class="number">0</span></span><br><span class="line">                x = i + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x <span class="keyword">if</span> total_sum &gt;= <span class="number">0</span> <span class="keyword">else</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/08/24/gas-station/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Set Matrix Zeros]]></title>
@@ -411,74 +487,6 @@ height</code>。可以遍历两遍数组，一次从左到右，记录每块板�
 <h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_r</span><span class="params">(self, A, target, low, high)</span>:</span></span><br><span class="line">        mid = low + (high - low) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> A[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> low &gt;= high:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> A[low] &lt; A[mid]:</span><br><span class="line">            <span class="comment"># A[mid] locates in the first sub-array</span></span><br><span class="line">            <span class="keyword">if</span> A[low] &lt;= target &lt; A[mid]:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, low, mid - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, mid + <span class="number">1</span>, high)</span><br><span class="line">        <span class="keyword">elif</span> A[low] == A[mid]:</span><br><span class="line">            <span class="keyword">return</span> self.search_r(A, target, low + <span class="number">1</span>, high)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># A[mid] locates in the second sub-array</span></span><br><span class="line">            <span class="keyword">if</span> A[mid] &lt; target &lt;= A[high]:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, mid + <span class="number">1</span>, high)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, low, mid - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.search_r(nums, target, <span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 ]]></content:encoded>
       <comments>http://garfieldog.github.io/2015/08/19/search-in-rotated-sorted-array-2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-在被旋转的有序数组中查找目标]]></title>
-      <link>http://garfieldog.github.io/2015/08/18/search-in-rotated-sorted-array/</link>
-      <guid>http://garfieldog.github.io/2015/08/18/search-in-rotated-sorted-array/</guid>
-      <pubDate>Tue, 18 Aug 2015 15:33:09 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
-<p>(i.e., 0 1 2 4 5 6 7 mi]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p>
-<p>(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).</p>
-<p>You are given a target value to search. If found in the array return its index, otherwise return -1.</p>
-<p>You may assume no duplicate exists in the array.</p>
-</blockquote>
-<p>一个有序的数组可能在某个位置被旋转，比如[0, 1, 2, 4, 5, 6, 7]在4这个数字位置上被旋转后变为[4, 5, 6, 7, 0, 1, 2]，给定一个目标元素，查找这个元素在数组中的下标，如果不存在，返回-1。假设数组中没有重复值。</p>
-<h2 id="分析">分析</h2><p>在有序数组中查找目标，直接使用二分法即可。如果数组被旋转之后呢？考察这个数组的性质，它由两段有序子数组组成，并且，第一个子数组的任一个数都<code>大于</code>(因为数组没有重复值)第二个子数组的所有数。这样一来，我们仍然可以在这个数组上展开二分查找：当<code>A[mid] &gt; A[low]</code>时，我们知道mid肯定落在第一个子数组里，反则反之。这时候我们再对比<code>target</code>和<code>A[low]</code>, <code>A[mid]</code>, <code>A[high]</code>的大小，从而判断接下来在那个半区搜索。</p>
-<p>难点在边界条件的判断。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_r</span><span class="params">(self, A, target, low, high)</span>:</span></span><br><span class="line">        mid = low + (high - low) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> A[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">if</span> low &gt;= high:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> A[low] &lt;= A[mid]:</span><br><span class="line">            <span class="comment"># A[mid] locates in the first sub-array</span></span><br><span class="line">            <span class="keyword">if</span> A[low] &lt;= target &lt; A[mid]:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, low, mid - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, mid + <span class="number">1</span>, high)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># A[mid] locates in the second sub-array</span></span><br><span class="line">            <span class="keyword">if</span> A[mid] &lt; target &lt;= A[high]:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, mid + <span class="number">1</span>, high)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> self.search_r(A, target, low, mid - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.search_r(nums, target, <span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/08/18/search-in-rotated-sorted-array/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-去除有序数组中的重复元素II]]></title>
-      <link>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array-2/</link>
-      <guid>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array-2/</guid>
-      <pubDate>Tue, 18 Aug 2015 09:28:17 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p>
-<p>For example,<b]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Follow up for “Remove Duplicates”:<br>What if duplicates are allowed at most twice?</p>
-<p>For example,<br>Given sorted array nums = [1,1,1,2,2,3],</p>
-<p>Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn’t matter what you leave beyond the new length.</p>
-</blockquote>
-<p>基本设定和<a href="/2015/08/18/remove-duplicates-from-sorted-array/">上一题</a>是一样的，但是难度稍有增加，允许同一元素出现至多两次，比如[1, 1, 1, 2, 2, 3]中1出现了3次，去重后保留2次，2出现2次，全保留，3出现1次，全保留。去重后原数组变为[1, 1, 2, 2, 3]，长度为5。</p>
-<h2 id="分析">分析</h2><p>由于相同元素肯定“扎堆出现”，修改<a href="/2015/08/18/remove-duplicates-from-sorted-array/">上一题</a>的代码，只要添加一个计数器，记录当前元素已经出现的个数就可以。时间复杂度O(n)，空间复杂度O(1)。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        m = <span class="number">1</span>  <span class="comment"># counter</span></span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">            <span class="keyword">if</span> m &lt; <span class="number">2</span> <span class="keyword">or</span> n != nums[i - <span class="number">1</span>]:</span><br><span class="line">                nums[i] = n</span><br><span class="line">                m = <span class="number">1</span> <span class="keyword">if</span> n != nums[i - <span class="number">1</span>] <span class="keyword">else</span> m + <span class="number">1</span>  <span class="comment"># reset m -&gt; 1 if a new number occurs</span></span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array-2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-去除有序数组中的重复元素]]></title>
-      <link>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array/</link>
-      <guid>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array/</guid>
-      <pubDate>Tue, 18 Aug 2015 08:34:22 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a sorted array, remove the duplicates in place such that each element appear only once and return t]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
-<p>For example,<br>Given input array nums = [1,1,2],</p>
-<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.</p>
-</blockquote>
-<p>给定一个排序后的数组，要求移除重复的元素，返回新的数组长度。要求O(1)空间</p>
-<h2 id="分析">分析</h2><p>这是一道简单题，使用两指针，一个记录去重后数组的尾部，一个扫原数组。可以实现inplace的时间O(n)空间O(1)的算法。另外，理解原题后就会发现，其实“有序”这个限定过于严格，只要保证相同的元素排列在一起就可以使用该算法。比如：[6, 6, 8, 8, 8, 7]</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">            <span class="keyword">if</span> n != nums[i - <span class="number">1</span>]:</span><br><span class="line">                nums[i] = n</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/08/18/remove-duplicates-from-sorted-array/#disqus_thread</comments>
     </item>
     
   </channel>

@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/25/single-number/</loc>
+    <lastmod>2015-08-25T03:47:12.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/25/candy/</loc>
+    <lastmod>2015-08-25T03:30:11.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/24/gas-station/</loc>
+    <lastmod>2015-08-25T02:35:43.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/24/set-matrix-zeros/</loc>
     <lastmod>2015-08-24T09:34:30.000Z</lastmod>
   </url>
