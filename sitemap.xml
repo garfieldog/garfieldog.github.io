@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/</loc>
+    <lastmod>2015-08-26T11:11:48.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/26/reverse-nodes-in-k-group/</loc>
+    <lastmod>2015-08-26T09:48:01.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/26/swap-nodes-in-pairs/</loc>
+    <lastmod>2015-08-26T06:58:23.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/26/remove-nth-node-from-end-of-list/</loc>
+    <lastmod>2015-08-26T06:25:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/26/rotate-array/</loc>
+    <lastmod>2015-08-26T04:21:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/26/rotate-list/</loc>
+    <lastmod>2015-08-26T03:45:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/25/remove-duplicates-from-sorted-list-2/</loc>
     <lastmod>2015-08-25T12:10:40.000Z</lastmod>
   </url>
