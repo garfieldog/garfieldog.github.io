@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/27/linked-list-cycle-2/</loc>
+    <lastmod>2015-08-27T15:30:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/08/27/linked-list-cycle/</loc>
+    <lastmod>2015-08-27T14:38:19.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/</loc>
     <lastmod>2015-08-26T11:11:48.000Z</lastmod>
   </url>
