@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/08/27/reorder-list/</loc>
+    <lastmod>2015-08-27T16:16:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/08/27/linked-list-cycle-2/</loc>
     <lastmod>2015-08-27T15:30:56.000Z</lastmod>
   </url>
