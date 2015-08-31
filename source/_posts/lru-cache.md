@@ -22,7 +22,7 @@ categories: [编程题]
 
 ### Python
 ```python
-# Definition for singly-linked list.
+# Definition for doubly-linked list.
 class ListNode(object):
     def __init__(self, key, val):
         self.key = key
