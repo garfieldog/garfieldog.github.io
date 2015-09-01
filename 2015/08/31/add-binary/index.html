@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,链表," />
+  <meta name="keywords" content="Leetcode,String," />
 
 
 
@@ -46,33 +46,30 @@
 
 
 <meta name="description" content="描述
-A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
-Return a deep copy of the list.
+Given two binary strings, return their sum (also a binary string).
+For example,a = “11”b = “1”Return “100”.
 
-分析这道题有点技巧，拢共分三步：
-
-第一步，给原链表每个节点复制">
+分析简单题。
+代码Python12345678910111213141516171819202122232425262728293031323334class Solution">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Copy List with Random Pointer">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/index.html">
+<meta property="og:title" content="Leetcode解题-Add Binary">
+<meta property="og:url" content="http://garfieldog.github.io/2015/08/31/add-binary/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
-Return a deep copy of the list.
+Given two binary strings, return their sum (also a binary string).
+For example,a = “11”b = “1”Return “100”.
 
-分析这道题有点技巧，拢共分三步：
-
-第一步，给原链表每个节点复制">
-<meta property="og:updated_time" content="2015-08-26T11:11:48.000Z">
+分析简单题。
+代码Python12345678910111213141516171819202122232425262728293031323334class Solution">
+<meta property="og:updated_time" content="2015-08-31T11:14:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Copy List with Random Pointer">
+<meta name="twitter:title" content="Leetcode解题-Add Binary">
 <meta name="twitter:description" content="描述
-A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
-Return a deep copy of the list.
+Given two binary strings, return their sum (also a binary string).
+For example,a = “11”b = “1”Return “100”.
 
-分析这道题有点技巧，拢共分三步：
-
-第一步，给原链表每个节点复制">
+分析简单题。
+代码Python12345678910111213141516171819202122232425262728293031323334class Solution">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -82,7 +79,7 @@ Return a deep copy of the list.
   };
 </script>
 
-  <title> Leetcode解题-Copy List with Random Pointer | Mew </title>
+  <title> Leetcode解题-Add Binary | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -208,7 +205,7 @@ Return a deep copy of the list.
           
           
             
-              Leetcode解题-Copy List with Random Pointer
+              Leetcode解题-Add Binary
             
           
         </h1>
@@ -217,8 +214,8 @@ Return a deep copy of the list.
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-26T17:51:07+08:00" content="2015-08-26">
-            2015-08-26
+          <time itemprop="dateCreated" datetime="2015-08-31T18:47:58+08:00" content="2015-08-31">
+            2015-08-31
           </time>
         </span>
 
@@ -243,8 +240,8 @@ Return a deep copy of the list.
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/26/copy-list-with-random-pointer/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/26/copy-list-with-random-pointer/" itemprop="commentsCount"></span>
+              <a href="/2015/08/31/add-binary/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/31/add-binary/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -259,16 +256,11 @@ Return a deep copy of the list.
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
-<p>Return a deep copy of the list.</p>
+<p>Given two binary strings, return their sum (also a binary string).</p>
+<p>For example,<br>a = “11”<br>b = “1”<br>Return “100”.</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>这道题有点技巧，拢共分三步：</p>
-<ol>
-<li>第一步，给原链表每个节点复制一个拷贝，插入到原节点后面。</li>
-<li>第二步，再次遍历链表，给复制出来的节点设置random指针。</li>
-<li>第三步，再次遍历链表，把原链表的节点和复制出来的节点拆成两个链表。</li>
-</ol>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list with a random pointer.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomListNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.label = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line">        self.random = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">copyRandomList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: RandomListNode</span><br><span class="line">        :rtype: RandomListNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            node = RandomListNode(cur.label)</span><br><span class="line">            node.next = cur.next</span><br><span class="line">            cur.next = node</span><br><span class="line">            cur = node.next</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> cur.random:</span><br><span class="line">                cur.next.random = cur.random.next</span><br><span class="line">            cur = cur.next.next</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        new_head = cur.next</span><br><span class="line">        <span class="keyword">while</span> cur <span class="keyword">and</span> cur.next:</span><br><span class="line">            next = cur.next</span><br><span class="line">            cur.next = cur.next.next</span><br><span class="line">            cur = next</span><br><span class="line">        <span class="keyword">return</span> new_head</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>简单题。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBit</span><span class="params">(self, a, b, c)</span>:</span></span><br><span class="line">        s = int(a) + int(b) + int(c)</span><br><span class="line">        <span class="keyword">return</span> divmod(s, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, arr)</span>:</span></span><br><span class="line">        n = len(arr)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n / <span class="number">2</span>):</span><br><span class="line">            arr[i], arr[n - <span class="number">1</span> - i] = arr[n - <span class="number">1</span> - i], arr[i]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type a: str</span><br><span class="line">        :type b: str</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        m, n = len(a), len(b)</span><br><span class="line">        <span class="keyword">if</span> m &gt; n:</span><br><span class="line">            <span class="keyword">return</span> self.addBinary(b, a)</span><br><span class="line"></span><br><span class="line">        rs = []</span><br><span class="line">        c = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m):</span><br><span class="line">            c, x = self.addBit(a[m - <span class="number">1</span> - i], b[n - <span class="number">1</span> - i], c)</span><br><span class="line">            rs.append(str(x))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m, n):</span><br><span class="line">            c, x = self.addBit(b[n - <span class="number">1</span> - i], <span class="number">0</span>, c)</span><br><span class="line">            rs.append(str(x))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> c == <span class="number">1</span>:</span><br><span class="line">            rs.append(<span class="string">'1'</span>)</span><br><span class="line">        self.reverse(rs)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(rs)</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -279,7 +271,7 @@ Return a deep copy of the list.
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/链表/" rel="tag">#链表</a>
+            <a href="/tags/String/" rel="tag">#String</a>
           
         </div>
       
@@ -288,13 +280,13 @@ Return a deep copy of the list.
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/27/linked-list-cycle/" rel="prev">Leetcode解题-Linked List Cycle</a>
+              <a href="/2015/08/31/longest-palindromic-substring/" rel="prev">Leetcode解题-Longest Palindromic Substring</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/26/reverse-nodes-in-k-group/" rel="next">Leetcode解题-Reverse Nodes in k-Group</a>
+              <a href="/2015/08/31/string-to-integer/" rel="next">Leetcode解题-String to Integer</a>
             
           </div>
         </div>
@@ -309,10 +301,10 @@ Return a deep copy of the list.
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/26/copy-list-with-random-pointer/"
-     data-title="Leetcode解题-Copy List with Random Pointer"
+        <div class="ds-share flat" data-thread-key="2015/08/31/add-binary/"
+     data-title="Leetcode解题-Add Binary"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/">
+     data-url="http://garfieldog.github.io/2015/08/31/add-binary/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -342,8 +334,8 @@ Return a deep copy of the list.
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/26/copy-list-with-random-pointer/"
-                   data-title="Leetcode解题-Copy List with Random Pointer" data-url="http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/">
+              <div class="ds-thread" data-thread-key="2015/08/31/add-binary/"
+                   data-title="Leetcode解题-Add Binary" data-url="http://garfieldog.github.io/2015/08/31/add-binary/">
               </div>
             
           </div>
