@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/06/length-of-last-word/</loc>
+    <lastmod>2015-09-06T10:12:02.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/06/simplify-path/</loc>
+    <lastmod>2015-09-06T09:41:12.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/06/group-anagrams/</loc>
+    <lastmod>2015-09-06T09:22:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/06/count-and-say/</loc>
+    <lastmod>2015-09-06T08:23:00.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/06/roman-to-integer/</loc>
     <lastmod>2015-09-06T08:03:41.000Z</lastmod>
   </url>
