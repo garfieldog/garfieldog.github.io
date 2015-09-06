@@ -7,8 +7,47 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Sun, 06 Sep 2015 10:12:02 GMT</pubDate>
+    <pubDate>Sun, 06 Sep 2015 11:35:54 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Longest Valid Parentheses]]></title>
+      <link>http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/</link>
+      <guid>http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/</guid>
+      <pubDate>Sun, 06 Sep 2015 11:33:29 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-for]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>For “(()”, the longest valid parentheses substring is “()”, which has length = 2.</p>
+<p>Another example is “)()())”, where the longest valid parentheses substring is “()()”, which has length = 4.</p>
+<h2 id="分析">分析</h2></blockquote>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><pre><code class="python">
+</code></pre>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Valid Parentheses]]></title>
+      <link>http://garfieldog.github.io/2015/09/06/valid-parentheses/</link>
+      <guid>http://garfieldog.github.io/2015/09/06/valid-parentheses/</guid>
+      <pubDate>Sun, 06 Sep 2015 11:23:59 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input str]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.</p>
+<p>The brackets must close in the correct order, “()” and “()[]{}” are all valid but “(]” and “([)]” are not.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>简单的Stack题，时间<code>O(n)</code>，空间<code>O(1)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValid</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        d = &#123;</span><br><span class="line">            <span class="string">')'</span>: <span class="string">'('</span>,</span><br><span class="line">            <span class="string">'&#125;'</span>: <span class="string">'&#123;'</span>,</span><br><span class="line">            <span class="string">']'</span>: <span class="string">'['</span></span><br><span class="line">        &#125;</span><br><span class="line">        ss = []</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c <span class="keyword">in</span> <span class="string">'(&#123;['</span>:</span><br><span class="line">                ss.append(c)</span><br><span class="line">            <span class="keyword">elif</span> c <span class="keyword">in</span> <span class="string">')&#125;]'</span>:</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> ss <span class="keyword">or</span> d[c] != ss[-<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                ss.pop()</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> ss</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/06/valid-parentheses/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Length of Last Word]]></title>
@@ -414,50 +453,6 @@
 <h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detectCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        p1 = head.next</span><br><span class="line">        p2 = head.next.next</span><br><span class="line">        <span class="keyword">while</span> p2:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> p2 <span class="keyword">or</span> <span class="keyword">not</span> p2.next:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">            <span class="keyword">if</span> p1 == p2:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            p2 = p2.next.next</span><br><span class="line">            p1 = p1.next</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> p1 == p2:</span><br><span class="line">            p2 = head</span><br><span class="line">            <span class="keyword">while</span> p1 != p2:</span><br><span class="line">                p1 = p1.next</span><br><span class="line">                p2 = p2.next</span><br><span class="line">            <span class="keyword">return</span> p1</span><br></pre></td></tr></table></figure>
 ]]></content:encoded>
       <comments>http://garfieldog.github.io/2015/08/27/linked-list-cycle-2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Linked List Cycle]]></title>
-      <link>http://garfieldog.github.io/2015/08/27/linked-list-cycle/</link>
-      <guid>http://garfieldog.github.io/2015/08/27/linked-list-cycle/</guid>
-      <pubDate>Thu, 27 Aug 2015 14:25:31 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a linked list, determine if it has a cycle in it.</p>
-<p>Follow up:<br>Can you solve it without usi]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a linked list, determine if it has a cycle in it.</p>
-<p>Follow up:<br>Can you solve it without using extra space?</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>经典题，使用两指针，一个每次走一步，另一个走两步，如果两指针相遇，则说明有环。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hasCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">        p1 = head.next</span><br><span class="line">        p2 = head.next.next</span><br><span class="line">        <span class="keyword">while</span> p2:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> p2 <span class="keyword">or</span> <span class="keyword">not</span> p2.next:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">if</span> p1 == p2:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            p2 = p2.next.next</span><br><span class="line">            p1 = p1.next</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/08/27/linked-list-cycle/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Copy List with Random Pointer]]></title>
-      <link>http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/</link>
-      <guid>http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/</guid>
-      <pubDate>Wed, 26 Aug 2015 09:51:07 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>A linked list is given such that each node contains an additional random pointer which could point to any]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
-<p>Return a deep copy of the list.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>这道题有点技巧，拢共分三步：</p>
-<ol>
-<li>第一步，给原链表每个节点复制一个拷贝，插入到原节点后面。</li>
-<li>第二步，再次遍历链表，给复制出来的节点设置random指针。</li>
-<li>第三步，再次遍历链表，把原链表的节点和复制出来的节点拆成两个链表。</li>
-</ol>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list with a random pointer.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomListNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.label = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line">        self.random = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">copyRandomList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: RandomListNode</span><br><span class="line">        :rtype: RandomListNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            node = RandomListNode(cur.label)</span><br><span class="line">            node.next = cur.next</span><br><span class="line">            cur.next = node</span><br><span class="line">            cur = node.next</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> cur.random:</span><br><span class="line">                cur.next.random = cur.random.next</span><br><span class="line">            cur = cur.next.next</span><br><span class="line"></span><br><span class="line">        cur = head</span><br><span class="line">        new_head = cur.next</span><br><span class="line">        <span class="keyword">while</span> cur <span class="keyword">and</span> cur.next:</span><br><span class="line">            next = cur.next</span><br><span class="line">            cur.next = cur.next.next</span><br><span class="line">            cur = next</span><br><span class="line">        <span class="keyword">return</span> new_head</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/08/26/copy-list-with-random-pointer/#disqus_thread</comments>
     </item>
     
   </channel>

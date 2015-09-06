@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/</loc>
+    <lastmod>2015-09-06T11:35:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/06/valid-parentheses/</loc>
+    <lastmod>2015-09-06T11:32:37.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/06/length-of-last-word/</loc>
     <lastmod>2015-09-06T10:12:02.000Z</lastmod>
   </url>

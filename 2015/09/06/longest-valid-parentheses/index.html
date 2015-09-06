@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,String," />
+  <meta name="keywords" content="Leetcode,Stack," />
 
 
 
@@ -46,30 +46,21 @@
 
 
 <meta name="description" content="描述
-Given an integer, convert it to a roman numeral.
-Input is guaranteed to be within the range from 1 to 3999.
-
-分析要考虑罗马数字的加法规则和减法规则，要写对还是有一定技巧的，下面是一个精巧的解法。
-代码Python123456789101112131415161718192021222">
+Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.
+For “(()”, the longest valid parentheses substring is “()”, whic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Integer to Roman">
-<meta property="og:url" content="http://garfieldog.github.io/2015/09/06/integer-to-roman/index.html">
+<meta property="og:title" content="Leetcode解题-Longest Valid Parentheses">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given an integer, convert it to a roman numeral.
-Input is guaranteed to be within the range from 1 to 3999.
-
-分析要考虑罗马数字的加法规则和减法规则，要写对还是有一定技巧的，下面是一个精巧的解法。
-代码Python123456789101112131415161718192021222">
-<meta property="og:updated_time" content="2015-09-06T07:44:05.000Z">
+Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.
+For “(()”, the longest valid parentheses substring is “()”, whic">
+<meta property="og:updated_time" content="2015-09-06T11:35:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Integer to Roman">
+<meta name="twitter:title" content="Leetcode解题-Longest Valid Parentheses">
 <meta name="twitter:description" content="描述
-Given an integer, convert it to a roman numeral.
-Input is guaranteed to be within the range from 1 to 3999.
-
-分析要考虑罗马数字的加法规则和减法规则，要写对还是有一定技巧的，下面是一个精巧的解法。
-代码Python123456789101112131415161718192021222">
+Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.
+For “(()”, the longest valid parentheses substring is “()”, whic">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -79,7 +70,7 @@ Input is guaranteed to be within the range from 1 to 3999.
   };
 </script>
 
-  <title> Leetcode解题-Integer to Roman | Mew </title>
+  <title> Leetcode解题-Longest Valid Parentheses | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -205,7 +196,7 @@ Input is guaranteed to be within the range from 1 to 3999.
           
           
             
-              Leetcode解题-Integer to Roman
+              Leetcode解题-Longest Valid Parentheses
             
           
         </h1>
@@ -214,7 +205,7 @@ Input is guaranteed to be within the range from 1 to 3999.
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-06T14:06:29+08:00" content="2015-09-06">
+          <time itemprop="dateCreated" datetime="2015-09-06T19:33:29+08:00" content="2015-09-06">
             2015-09-06
           </time>
         </span>
@@ -240,8 +231,8 @@ Input is guaranteed to be within the range from 1 to 3999.
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/06/integer-to-roman/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/integer-to-roman/" itemprop="commentsCount"></span>
+              <a href="/2015/09/06/longest-valid-parentheses/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/longest-valid-parentheses/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -256,11 +247,12 @@ Input is guaranteed to be within the range from 1 to 3999.
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given an integer, convert it to a roman numeral.</p>
-<p>Input is guaranteed to be within the range from 1 to 3999.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>要考虑<a href="https://zh.wikipedia.org/wiki/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97" target="_blank" rel="external">罗马数字</a>的加法规则和减法规则，要写对还是有一定技巧的，下面是一个精巧的解法。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">intToRoman</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type num: int</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        romans = [</span><br><span class="line">            (<span class="string">'M'</span>, <span class="number">1000</span>),</span><br><span class="line">            (<span class="string">'CM'</span>, <span class="number">900</span>),</span><br><span class="line">            (<span class="string">'D'</span>, <span class="number">500</span>),</span><br><span class="line">            (<span class="string">'CD'</span>, <span class="number">400</span>),</span><br><span class="line">            (<span class="string">'C'</span>, <span class="number">100</span>),</span><br><span class="line">            (<span class="string">'XC'</span>, <span class="number">90</span>),</span><br><span class="line">            (<span class="string">'L'</span>, <span class="number">50</span>),</span><br><span class="line">            (<span class="string">'XL'</span>, <span class="number">40</span>),</span><br><span class="line">            (<span class="string">'X'</span>, <span class="number">10</span>),</span><br><span class="line">            (<span class="string">'IX'</span>, <span class="number">9</span>),</span><br><span class="line">            (<span class="string">'V'</span>, <span class="number">5</span>),</span><br><span class="line">            (<span class="string">'IV'</span>, <span class="number">4</span>),</span><br><span class="line">            (<span class="string">'I'</span>, <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">        rs = []</span><br><span class="line">        <span class="keyword">for</span> s, n <span class="keyword">in</span> romans:</span><br><span class="line">            c, num = divmod(num, n)</span><br><span class="line">            rs.extend([s] * c)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(rs)</span><br></pre></td></tr></table></figure>
+<p>Given a string containing just the characters ‘(‘ and ‘)’, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>For “(()”, the longest valid parentheses substring is “()”, which has length = 2.</p>
+<p>Another example is “)()())”, where the longest valid parentheses substring is “()()”, which has length = 4.</p>
+<h2 id="分析">分析</h2></blockquote>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><pre><code class="python">
+</code></pre>
 </span>
       
     </div>
@@ -271,7 +263,7 @@ Input is guaranteed to be within the range from 1 to 3999.
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/String/" rel="tag">#String</a>
+            <a href="/tags/Stack/" rel="tag">#Stack</a>
           
         </div>
       
@@ -280,13 +272,11 @@ Input is guaranteed to be within the range from 1 to 3999.
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/06/roman-to-integer/" rel="prev">Leetcode解题-Roman to Integer</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/06/valid-number/" rel="next">Leetcode解题-Valid Number</a>
+              <a href="/2015/09/06/valid-parentheses/" rel="next">Leetcode解题-Valid Parentheses</a>
             
           </div>
         </div>
@@ -301,10 +291,10 @@ Input is guaranteed to be within the range from 1 to 3999.
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/06/integer-to-roman/"
-     data-title="Leetcode解题-Integer to Roman"
+        <div class="ds-share flat" data-thread-key="2015/09/06/longest-valid-parentheses/"
+     data-title="Leetcode解题-Longest Valid Parentheses"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/09/06/integer-to-roman/">
+     data-url="http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +324,8 @@ Input is guaranteed to be within the range from 1 to 3999.
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/06/integer-to-roman/"
-                   data-title="Leetcode解题-Integer to Roman" data-url="http://garfieldog.github.io/2015/09/06/integer-to-roman/">
+              <div class="ds-thread" data-thread-key="2015/09/06/longest-valid-parentheses/"
+                   data-title="Leetcode解题-Longest Valid Parentheses" data-url="http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/">
               </div>
             
           </div>
