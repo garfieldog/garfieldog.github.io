@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/06/roman-to-integer/</loc>
+    <lastmod>2015-09-06T08:03:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/06/integer-to-roman/</loc>
+    <lastmod>2015-09-06T07:44:05.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/06/valid-number/</loc>
-    <lastmod>2015-09-06T05:54:23.000Z</lastmod>
+    <lastmod>2015-09-06T06:00:21.000Z</lastmod>
   </url>
   
   <url>
