@@ -18,11 +18,11 @@ categories: [编程题]
 ## 分析
 有难度，需要构建状态机。画出来是这个样子的：
 
-![automata](/valid_number_automata.png)
+![automata](/images/valid_number_automata.png)
 
 上面的图是用[Graphviz][1]画的，非常好用。贴一下上图的dot语言源码:
 
-```dot
+```
 digraph valid_number { 
     rankdir=LR;
     node [shape = circle];
