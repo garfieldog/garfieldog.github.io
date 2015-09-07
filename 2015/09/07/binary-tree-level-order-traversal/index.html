@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,数学,格雷码,递归," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,21 +46,21 @@
 
 
 <meta name="description" content="描述
-The gray code is a binary numeral system where two successive values differ in only one bit.
-Given a non-negative integer n representing the total number of bits in the code, print the sequence of">
+Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).
+For example:Given binary tree {3,9,20,#,#,15,7},    3   / \  9  20    /  \   15">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Gary Code">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/24/gary-code/index.html">
+<meta property="og:title" content="Leetcode解题-Binary Tree Level Order Traversal">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/07/binary-tree-level-order-traversal/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-The gray code is a binary numeral system where two successive values differ in only one bit.
-Given a non-negative integer n representing the total number of bits in the code, print the sequence of">
-<meta property="og:updated_time" content="2015-08-24T07:36:09.000Z">
+Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).
+For example:Given binary tree {3,9,20,#,#,15,7},    3   / \  9  20    /  \   15">
+<meta property="og:updated_time" content="2015-09-07T11:49:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Gary Code">
+<meta name="twitter:title" content="Leetcode解题-Binary Tree Level Order Traversal">
 <meta name="twitter:description" content="描述
-The gray code is a binary numeral system where two successive values differ in only one bit.
-Given a non-negative integer n representing the total number of bits in the code, print the sequence of">
+Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).
+For example:Given binary tree {3,9,20,#,#,15,7},    3   / \  9  20    /  \   15">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +70,7 @@ Given a non-negative integer n representing the total number of bits in the code
   };
 </script>
 
-  <title> Leetcode解题-Gary Code | Mew </title>
+  <title> Leetcode解题-Binary Tree Level Order Traversal | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -196,7 +196,7 @@ Given a non-negative integer n representing the total number of bits in the code
           
           
             
-              Leetcode解题-Gary Code
+              Leetcode解题-Binary Tree Level Order Traversal
             
           
         </h1>
@@ -205,8 +205,8 @@ Given a non-negative integer n representing the total number of bits in the code
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-24T14:29:49+08:00" content="2015-08-24">
-            2015-08-24
+          <time itemprop="dateCreated" datetime="2015-09-07T19:34:45+08:00" content="2015-09-07">
+            2015-09-07
           </time>
         </span>
 
@@ -231,8 +231,8 @@ Given a non-negative integer n representing the total number of bits in the code
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/24/gary-code/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/gary-code/" itemprop="commentsCount"></span>
+              <a href="/2015/09/07/binary-tree-level-order-traversal/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/07/binary-tree-level-order-traversal/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -247,21 +247,11 @@ Given a non-negative integer n representing the total number of bits in the code
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>The gray code is a binary numeral system where two successive values differ in only one bit.</p>
-<p>Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.</p>
-<p>For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:</p>
-<p>00 - 0<br>01 - 1<br>11 - 3<br>10 - 2<br>Note:<br>For a given n, a gray code sequence is not uniquely defined.</p>
-<p>For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.</p>
-<p>For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.</p>
+<p>Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).</p>
+<p>For example:<br>Given binary tree {3,9,20,#,#,15,7},<br>    3<br>   / \<br>  9  20<br>    /  \<br>   15   7<br>return its level order traversal as:<br>[<br>  [3],<br>  [9,20],<br>  [15,7]<br>]</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>格雷码有数学公式：第n个格雷码<code>G(n)= n xor (n / 2)</code>，因此只要顺序给出从0到<code>2^n -1</code>个格雷码就可以。</p>
-<p>数学公式虽然精妙，但如果你不知道这个公式，是很难现场推出来的。还可以从定义出发，递归给出格雷码:</p>
-<ol>
-<li>当n=1时，格雷码序列是<code>L(1) = [0, 1]</code></li>
-<li>当n&gt;1时，格雷码序列是 <code>0前缀 ++ L(n - 1)</code> 和<code>1前缀 ++ reverse(L(n - 1))</code>的拼接。</li>
-</ol>
-<h2 id="代码">代码</h2><h3 id="公式法">公式法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grayCode</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        rs = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">2</span> ** n):</span><br><span class="line">            rs.append(i ^ (i / <span class="number">2</span>))</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
-<h3 id="递归法">递归法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grayCode</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        rs = [<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            h = <span class="number">1</span> &lt;&lt; i</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(rs) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">                rs.append(h | rs[j])</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>广度优先遍历，用队列实现。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque, OrderedDict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        """</span></span><br><span class="line">        queue = deque()</span><br><span class="line">        d = OrderedDict()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        queue.append((root, <span class="number">0</span>))</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            cur, idx = queue.popleft()</span><br><span class="line">            d.setdefault(idx, []).append(cur.val)</span><br><span class="line">            <span class="keyword">if</span> cur.left:</span><br><span class="line">                queue.append((cur.left, idx + <span class="number">1</span>))</span><br><span class="line">            <span class="keyword">if</span> cur.right:</span><br><span class="line">                queue.append((cur.right, idx + <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> d.values()</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -272,11 +262,7 @@ Given a non-negative integer n representing the total number of bits in the code
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/数学/" rel="tag">#数学</a>
-          
-            <a href="/tags/格雷码/" rel="tag">#格雷码</a>
-          
-            <a href="/tags/递归/" rel="tag">#递归</a>
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -285,13 +271,13 @@ Given a non-negative integer n representing the total number of bits in the code
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/24/rotate-image/" rel="prev">Leetcode解题-Rotate Image</a>
+              <a href="/2015/09/07/binary-tree-level-order-traversal-2/" rel="prev">Leetcode解题-Binary Tree Level Order Traversal II</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/24/climbing-stairs/" rel="next">Leetcode解题-Climbing Stairs</a>
+              <a href="/2015/09/07/binary-tree-postorder-traversal/" rel="next">Leetcode解题-Binary Tree Postorder Traversal</a>
             
           </div>
         </div>
@@ -306,10 +292,10 @@ Given a non-negative integer n representing the total number of bits in the code
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/24/gary-code/"
-     data-title="Leetcode解题-Gary Code"
+        <div class="ds-share flat" data-thread-key="2015/09/07/binary-tree-level-order-traversal/"
+     data-title="Leetcode解题-Binary Tree Level Order Traversal"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/24/gary-code/">
+     data-url="http://garfieldog.github.io/2015/09/07/binary-tree-level-order-traversal/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -339,8 +325,8 @@ Given a non-negative integer n representing the total number of bits in the code
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/24/gary-code/"
-                   data-title="Leetcode解题-Gary Code" data-url="http://garfieldog.github.io/2015/08/24/gary-code/">
+              <div class="ds-thread" data-thread-key="2015/09/07/binary-tree-level-order-traversal/"
+                   data-title="Leetcode解题-Binary Tree Level Order Traversal" data-url="http://garfieldog.github.io/2015/09/07/binary-tree-level-order-traversal/">
               </div>
             
           </div>
@@ -445,7 +431,7 @@ Given a non-negative integer n representing the total number of bits in the code
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#公式法"><span class="nav-number">3.1.</span> <span class="nav-text">公式法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归法"><span class="nav-number">3.2.</span> <span class="nav-text">递归法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
