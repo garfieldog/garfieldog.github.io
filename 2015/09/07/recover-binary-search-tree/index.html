@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,30 +46,24 @@
 
 
 <meta name="description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
-
-分析没什么好分析的，循环进位。
-代码Pyth">
+Two elements of a binary search tree (BST) are swapped by mistake.
+Recover the tree without changing its structure.
+Note:A solution using O(n) space is pretty straight forward. Could you devise a c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Plus One">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/24/plus-one/index.html">
+<meta property="og:title" content="Leetcode解题-Recover Binary Search Tree">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/07/recover-binary-search-tree/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
-
-分析没什么好分析的，循环进位。
-代码Pyth">
-<meta property="og:updated_time" content="2015-08-24T06:27:11.000Z">
+Two elements of a binary search tree (BST) are swapped by mistake.
+Recover the tree without changing its structure.
+Note:A solution using O(n) space is pretty straight forward. Could you devise a c">
+<meta property="og:updated_time" content="2015-09-07T15:56:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Plus One">
+<meta name="twitter:title" content="Leetcode解题-Recover Binary Search Tree">
 <meta name="twitter:description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
-
-分析没什么好分析的，循环进位。
-代码Pyth">
+Two elements of a binary search tree (BST) are swapped by mistake.
+Recover the tree without changing its structure.
+Note:A solution using O(n) space is pretty straight forward. Could you devise a c">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -79,7 +73,7 @@ The digits are stored such that the most significant digit is at the head of the
   };
 </script>
 
-  <title> Leetcode解题-Plus One | Mew </title>
+  <title> Leetcode解题-Recover Binary Search Tree | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -205,7 +199,7 @@ The digits are stored such that the most significant digit is at the head of the
           
           
             
-              Leetcode解题-Plus One
+              Leetcode解题-Recover Binary Search Tree
             
           
         </h1>
@@ -214,8 +208,8 @@ The digits are stored such that the most significant digit is at the head of the
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-24T13:57:51+08:00" content="2015-08-24">
-            2015-08-24
+          <time itemprop="dateCreated" datetime="2015-09-07T22:17:30+08:00" content="2015-09-07">
+            2015-09-07
           </time>
         </span>
 
@@ -240,8 +234,8 @@ The digits are stored such that the most significant digit is at the head of the
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/24/plus-one/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/plus-one/" itemprop="commentsCount"></span>
+              <a href="/2015/09/07/recover-binary-search-tree/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/07/recover-binary-search-tree/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -256,11 +250,14 @@ The digits are stored such that the most significant digit is at the head of the
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
-<p>The digits are stored such that the most significant digit is at the head of the list.</p>
+<p>Two elements of a binary search tree (BST) are swapped by mistake.</p>
+<p>Recover the tree without changing its structure.</p>
+<p>Note:<br>A solution using O(n) space is pretty straight forward. Could you devise a constant space solution?</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>没什么好分析的，循环进位。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plusOne</span><span class="params">(self, digits)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type digits: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        carry = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(digits) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            s = digits[i] + carry</span><br><span class="line">            carry, r = divmod(s, <span class="number">10</span>)</span><br><span class="line">            digits[i] = r</span><br><span class="line">        <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">            digits.insert(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> digits</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>可以用中序遍历来做，记录上一个访问的元素，如果发现违反了正序则记录位置，遍历完之后把两个位置元素调换。时间<code>O(n)</code>，空间平均<code>O(logn)</code>，最坏<code>O(n)</code>。</p>
+<p>追求空间<code>O(1)</code>的解法可以使用Morris遍历。</p>
+<h2 id="代码">代码</h2><h3 id="普通中序遍历">普通中序遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">recoverTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: void Do not return anything, modify root in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        <span class="comment"># inorder traversal</span></span><br><span class="line">        cur = root</span><br><span class="line">        ss = []</span><br><span class="line">        prev = TreeNode(float(<span class="string">'-inf'</span>))</span><br><span class="line">        first = second = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span> ss <span class="keyword">or</span> cur:</span><br><span class="line">            <span class="keyword">if</span> cur:</span><br><span class="line">                ss.append(cur)</span><br><span class="line">                cur = cur.left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = ss.pop()</span><br><span class="line">                <span class="comment"># visit cur</span></span><br><span class="line">                <span class="keyword">if</span> cur.val &lt; prev.val:</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> first:</span><br><span class="line">                        first = prev</span><br><span class="line">                    second = cur</span><br><span class="line">                prev = cur</span><br><span class="line">                cur = cur.right</span><br><span class="line">        first.val, second.val = second.val, first.val</span><br></pre></td></tr></table></figure>
+<h3 id="Morris遍历">Morris遍历</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">recoverTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: void Do not return anything, modify root in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        <span class="comment"># inorder traversal</span></span><br><span class="line">        cur = root</span><br><span class="line">        prev = <span class="keyword">None</span></span><br><span class="line">        first = second = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur.left:</span><br><span class="line">                <span class="comment"># visit cur</span></span><br><span class="line">                <span class="keyword">if</span> prev <span class="keyword">and</span> cur.val &lt; prev.val:</span><br><span class="line">                    <span class="keyword">if</span> <span class="keyword">not</span> first:</span><br><span class="line">                        first = prev</span><br><span class="line">                    second = cur</span><br><span class="line">                prev = cur</span><br><span class="line">                cur = cur.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                node = cur.left</span><br><span class="line">                <span class="keyword">while</span> node.right <span class="keyword">and</span> node.right != cur:</span><br><span class="line">                    node = node.right</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> node.right:</span><br><span class="line">                    <span class="comment"># not threaded yet</span></span><br><span class="line">                    node.right = cur</span><br><span class="line">                    cur = cur.left</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># already threaded</span></span><br><span class="line">                    node.right = <span class="keyword">None</span></span><br><span class="line">                    <span class="comment"># visit cur</span></span><br><span class="line">                    <span class="keyword">if</span> prev <span class="keyword">and</span> cur.val &lt; prev.val:</span><br><span class="line">                        <span class="keyword">if</span> <span class="keyword">not</span> first:</span><br><span class="line">                            first = prev</span><br><span class="line">                        second = cur</span><br><span class="line">                    prev = cur</span><br><span class="line">                    cur = cur.right</span><br><span class="line"></span><br><span class="line">        first.val, second.val = second.val, first.val</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -269,9 +266,9 @@ The digits are stored such that the most significant digit is at the head of the
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -280,13 +277,11 @@ The digits are stored such that the most significant digit is at the head of the
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/24/climbing-stairs/" rel="prev">Leetcode解题-Climbing Stairs</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/22/trapping-rain-water/" rel="next">Leetcode解题-Trapping Rain Water</a>
+              <a href="/2015/09/07/binary-tree-zigzag-level-order-traversal/" rel="next">Leetcode解题-Binary Tree Zigzag Level Order Traversal</a>
             
           </div>
         </div>
@@ -301,10 +296,10 @@ The digits are stored such that the most significant digit is at the head of the
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/24/plus-one/"
-     data-title="Leetcode解题-Plus One"
+        <div class="ds-share flat" data-thread-key="2015/09/07/recover-binary-search-tree/"
+     data-title="Leetcode解题-Recover Binary Search Tree"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/24/plus-one/">
+     data-url="http://garfieldog.github.io/2015/09/07/recover-binary-search-tree/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +329,8 @@ The digits are stored such that the most significant digit is at the head of the
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/24/plus-one/"
-                   data-title="Leetcode解题-Plus One" data-url="http://garfieldog.github.io/2015/08/24/plus-one/">
+              <div class="ds-thread" data-thread-key="2015/09/07/recover-binary-search-tree/"
+                   data-title="Leetcode解题-Recover Binary Search Tree" data-url="http://garfieldog.github.io/2015/09/07/recover-binary-search-tree/">
               </div>
             
           </div>
@@ -440,7 +435,7 @@ The digits are stored such that the most significant digit is at the head of the
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通中序遍历"><span class="nav-number">3.1.</span> <span class="nav-text">普通中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Morris遍历"><span class="nav-number">3.2.</span> <span class="nav-text">Morris遍历</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/07/recover-binary-search-tree/</loc>
+    <lastmod>2015-09-07T15:56:38.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/07/binary-tree-zigzag-level-order-traversal/</loc>
     <lastmod>2015-09-07T12:21:43.000Z</lastmod>
   </url>
