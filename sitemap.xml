@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/07/evaluate-reverse-polish-notation/</loc>
+    <lastmod>2015-09-07T06:54:17.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/07/largest-rectangle-in-histogram/</loc>
+    <lastmod>2015-09-07T06:35:04.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/06/longest-valid-parentheses/</loc>
-    <lastmod>2015-09-06T11:35:54.000Z</lastmod>
+    <lastmod>2015-09-07T06:00:45.000Z</lastmod>
   </url>
   
   <url>
