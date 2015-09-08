@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,30 +46,27 @@
 
 
 <meta name="description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
-分析没什么好分析的，循环进位。
-代码Pyth">
+分析本质上就是遍历二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Plus One">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/24/plus-one/index.html">
+<meta property="og:title" content="Leetcode解题-Same Tree">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/08/same-tree/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
-分析没什么好分析的，循环进位。
-代码Pyth">
-<meta property="og:updated_time" content="2015-08-24T06:27:11.000Z">
+分析本质上就是遍历二叉树">
+<meta property="og:updated_time" content="2015-09-08T02:08:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Plus One">
+<meta name="twitter:title" content="Leetcode解题-Same Tree">
 <meta name="twitter:description" content="描述
-Given a non-negative number represented as an array of digits, plus one to the number.
-The digits are stored such that the most significant digit is at the head of the list.
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
-分析没什么好分析的，循环进位。
-代码Pyth">
+分析本质上就是遍历二叉树">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -79,7 +76,7 @@ The digits are stored such that the most significant digit is at the head of the
   };
 </script>
 
-  <title> Leetcode解题-Plus One | Mew </title>
+  <title> Leetcode解题-Same Tree | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -205,7 +202,7 @@ The digits are stored such that the most significant digit is at the head of the
           
           
             
-              Leetcode解题-Plus One
+              Leetcode解题-Same Tree
             
           
         </h1>
@@ -214,8 +211,8 @@ The digits are stored such that the most significant digit is at the head of the
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-24T13:57:51+08:00" content="2015-08-24">
-            2015-08-24
+          <time itemprop="dateCreated" datetime="2015-09-08T09:49:41+08:00" content="2015-09-08">
+            2015-09-08
           </time>
         </span>
 
@@ -240,8 +237,8 @@ The digits are stored such that the most significant digit is at the head of the
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/24/plus-one/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/24/plus-one/" itemprop="commentsCount"></span>
+              <a href="/2015/09/08/same-tree/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/08/same-tree/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -256,11 +253,12 @@ The digits are stored such that the most significant digit is at the head of the
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
-<p>The digits are stored such that the most significant digit is at the head of the list.</p>
+<p>Given two binary trees, write a function to check if they are equal or not.</p>
+<p>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>没什么好分析的，循环进位。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plusOne</span><span class="params">(self, digits)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type digits: List[int]</span><br><span class="line">        :rtype: List[int]</span><br><span class="line">        """</span></span><br><span class="line">        carry = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(digits) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">            s = digits[i] + carry</span><br><span class="line">            carry, r = divmod(s, <span class="number">10</span>)</span><br><span class="line">            digits[i] = r</span><br><span class="line">        <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">            digits.insert(<span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> digits</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>本质上就是遍历二叉树，递归法很简单，迭代也不难写。时间<code>O(n)</code>，空间平均<code>O(logn)</code>，最坏<code>O(n)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="递归">递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type p: TreeNode</span><br><span class="line">        :type q: TreeNode</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p <span class="keyword">or</span> <span class="keyword">not</span> q:</span><br><span class="line">            <span class="keyword">return</span> p == q</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> p.val != q.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isSameTree(p.left, q.left):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isSameTree(p.right, q.right):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h3 id="迭代">迭代</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type p: TreeNode</span><br><span class="line">        :type q: TreeNode</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="comment"># preorder traversal</span></span><br><span class="line">        ss = []</span><br><span class="line">        ss.append((p, q))</span><br><span class="line">        <span class="keyword">while</span> ss:</span><br><span class="line">            x, y = ss.pop()</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">not</span> x <span class="keyword">or</span> <span class="keyword">not</span> y):</span><br><span class="line">                <span class="keyword">if</span> x == y:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">if</span> x.val != y.val:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            ss.append((x.right, y.right))</span><br><span class="line">            ss.append((x.left, y.left))</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -269,9 +267,9 @@ The digits are stored such that the most significant digit is at the head of the
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -280,13 +278,13 @@ The digits are stored such that the most significant digit is at the head of the
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/24/climbing-stairs/" rel="prev">Leetcode解题-Climbing Stairs</a>
+              <a href="/2015/09/08/symmetric-tree/" rel="prev">Leetcode解题-Symmetric Tree</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/22/trapping-rain-water/" rel="next">Leetcode解题-Trapping Rain Water</a>
+              <a href="/2015/09/07/recover-binary-search-tree/" rel="next">Leetcode解题-Recover Binary Search Tree</a>
             
           </div>
         </div>
@@ -301,10 +299,10 @@ The digits are stored such that the most significant digit is at the head of the
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/24/plus-one/"
-     data-title="Leetcode解题-Plus One"
+        <div class="ds-share flat" data-thread-key="2015/09/08/same-tree/"
+     data-title="Leetcode解题-Same Tree"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/24/plus-one/">
+     data-url="http://garfieldog.github.io/2015/09/08/same-tree/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +332,8 @@ The digits are stored such that the most significant digit is at the head of the
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/24/plus-one/"
-                   data-title="Leetcode解题-Plus One" data-url="http://garfieldog.github.io/2015/08/24/plus-one/">
+              <div class="ds-thread" data-thread-key="2015/09/08/same-tree/"
+                   data-title="Leetcode解题-Same Tree" data-url="http://garfieldog.github.io/2015/09/08/same-tree/">
               </div>
             
           </div>
@@ -440,7 +438,7 @@ The digits are stored such that the most significant digit is at the head of the
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#递归"><span class="nav-number">3.1.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代"><span class="nav-number">3.2.</span> <span class="nav-text">迭代</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
