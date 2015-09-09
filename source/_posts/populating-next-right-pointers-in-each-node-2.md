@@ -32,4 +32,4 @@ categories: [编程题]
 ## 代码
 直接看[上一题][1]。
 
-[1]: /2015/09/08/populating-next-right-pointers-in-each-node/
+[1]: /2015/09/09/populating-next-right-pointers-in-each-node/
