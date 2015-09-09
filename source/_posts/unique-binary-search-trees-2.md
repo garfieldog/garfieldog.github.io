@@ -1,6 +1,6 @@
 title: Leetcode解题-Unique Binary Search Trees II
 date: 2015-09-09 13:58:37
-tags: [Leetcode, Tree, 动态规划]
+tags: [Leetcode, Tree]
 categories: [编程题]
 ---
 
