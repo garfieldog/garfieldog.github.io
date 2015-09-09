@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Graphviz,Leetcode,String,自动机," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,22 +46,33 @@
 
 
 <meta name="description" content="描述
-Validate if a given string is numeric.
-Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt; false“1 a” =&amp;gt; false“2e10” =&amp;gt; trueNote: It is intended for the problem statement to be ambiguou">
+Given inorder and postorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+
+分析上一题的姐妹版。如法炮制即可。
+PS: 从preorder和postorder是无法重建二叉树的。
+代码Pyth">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Valid Number">
-<meta property="og:url" content="http://garfieldog.github.io/2015/09/06/valid-number/index.html">
+<meta property="og:title" content="Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Validate if a given string is numeric.
-Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt; false“1 a” =&amp;gt; false“2e10” =&amp;gt; trueNote: It is intended for the problem statement to be ambiguou">
-<meta property="og:image" content="http://garfieldog.github.io/images/valid_number_automata.png">
-<meta property="og:updated_time" content="2015-09-06T06:00:21.000Z">
+Given inorder and postorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+
+分析上一题的姐妹版。如法炮制即可。
+PS: 从preorder和postorder是无法重建二叉树的。
+代码Pyth">
+<meta property="og:updated_time" content="2015-09-09T04:02:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Valid Number">
+<meta name="twitter:title" content="Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal">
 <meta name="twitter:description" content="描述
-Validate if a given string is numeric.
-Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt; false“1 a” =&amp;gt; false“2e10” =&amp;gt; trueNote: It is intended for the problem statement to be ambiguou">
+Given inorder and postorder traversal of a tree, construct the binary tree.
+Note:You may assume that duplicates do not exist in the tree.
+
+分析上一题的姐妹版。如法炮制即可。
+PS: 从preorder和postorder是无法重建二叉树的。
+代码Pyth">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -71,7 +82,7 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
   };
 </script>
 
-  <title> Leetcode解题-Valid Number | Mew </title>
+  <title> Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -197,7 +208,7 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
           
           
             
-              Leetcode解题-Valid Number
+              Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal
             
           
         </h1>
@@ -206,8 +217,8 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-06T10:41:27+08:00" content="2015-09-06">
-            2015-09-06
+          <time itemprop="dateCreated" datetime="2015-09-09T11:26:42+08:00" content="2015-09-09">
+            2015-09-09
           </time>
         </span>
 
@@ -232,8 +243,8 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/06/valid-number/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/06/valid-number/" itemprop="commentsCount"></span>
+              <a href="/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -248,15 +259,12 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Validate if a given string is numeric.</p>
-<p>Some examples:<br>“0” =&gt; true<br>“ 0.1 “ =&gt; true<br>“abc” =&gt; false<br>“1 a” =&gt; false<br>“2e10” =&gt; true<br>Note: It is intended for the problem statement to be ambiguous. You should gather all requirements up front before implementing one.</p>
+<p>Given inorder and postorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assume that duplicates do not exist in the tree.</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>有难度，需要构建状态机。画出来是这个样子的：</p>
-<p><img src="/images/valid_number_automata.png" alt="automata"></p>
-<p>上面的图是用<a href="http://www.graphviz.org/" target="_blank" rel="external">Graphviz</a>画的，非常好用。贴一下上图的dot语言源码:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">digraph</span> valid_number &#123; </span><br><span class="line">    rankdir<span class="label">=LR</span><span class="comment">;</span></span><br><span class="line">    node [shape = circle]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> [shape = doublecircle]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S4</span> [shape = doublecircle]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S7</span> [shape = doublecircle]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S8</span> [shape = doublecircle]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S0</span> -&gt; <span class="literal">S0</span> [label = <span class="string">"space"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S0</span> -&gt; <span class="literal">S3</span> [label = <span class="string">"+, -"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S0</span> -&gt; <span class="literal">S1</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S0</span> -&gt; <span class="literal">S2</span> [label = <span class="string">"."</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S0</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> -&gt; <span class="literal">S8</span> [label = <span class="string">"space"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> -&gt; <span class="literal">S1</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> -&gt; <span class="literal">S4</span> [label = <span class="string">"."</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> -&gt; <span class="literal">S5</span> [label = <span class="string">"e"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S1</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S2</span> -&gt; <span class="literal">S4</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S2</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S3</span> -&gt; <span class="literal">S1</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S3</span> -&gt; <span class="literal">S2</span> [label = <span class="string">"."</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S3</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S4</span> -&gt; <span class="literal">S8</span> [label = <span class="string">"space"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S4</span> -&gt; <span class="literal">S4</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S4</span> -&gt; <span class="literal">S5</span> [label = <span class="string">"e"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S4</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S5</span> -&gt; <span class="literal">S6</span> [label = <span class="string">"+, -"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S5</span> -&gt; <span class="literal">S7</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S5</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S6</span> -&gt; <span class="literal">S7</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S6</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S7</span> -&gt; <span class="literal">S8</span> [label = <span class="string">"space"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S7</span> -&gt; <span class="literal">S7</span> [label = <span class="string">"[0-9]"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S7</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S8</span> -&gt; <span class="literal">S8</span> [label = <span class="string">"space"</span>]<span class="comment">;</span></span><br><span class="line">    <span class="literal">S8</span> -&gt; SS [label = <span class="string">"other"</span>]<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>时间复杂度<code>O(n)</code>，空间<code>O(1)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getCharType</span><span class="params">(self, c)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> c == <span class="string">' '</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> c == <span class="string">'+'</span> <span class="keyword">or</span> c == <span class="string">'-'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">elif</span> c <span class="keyword">in</span> <span class="string">'0123456789'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">        <span class="keyword">elif</span> c == <span class="string">'.'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line">        <span class="keyword">elif</span> c == <span class="string">'e'</span> <span class="keyword">or</span> c == <span class="string">'E'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">5</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getAutoMata</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            (-<span class="number">1</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, <span class="number">8</span>, -<span class="number">1</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>),</span><br><span class="line">            (-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>, <span class="number">4</span>, -<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, <span class="number">8</span>, -<span class="number">1</span>, <span class="number">4</span>, -<span class="number">1</span>, <span class="number">5</span>),</span><br><span class="line">            (-<span class="number">1</span>, -<span class="number">1</span>, <span class="number">6</span>, <span class="number">7</span>, -<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>, <span class="number">7</span>, -<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, <span class="number">8</span>, -<span class="number">1</span>, <span class="number">7</span>, -<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">            (-<span class="number">1</span>, <span class="number">8</span>, -<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>),</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isNumber</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        m = self.getAutoMata()</span><br><span class="line">        state = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            t = self.getCharType(c)</span><br><span class="line">            state = m[state][t]</span><br><span class="line">            <span class="keyword">if</span> state == -<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> state <span class="keyword">in</span> (<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p><a href="/2015/09/09/construct-binary-tree-from-preorder-and-inorder/">上一题</a>的姐妹版。如法炮制即可。</p>
+<p>PS: 从preorder和postorder是无法重建二叉树的。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTreeR</span><span class="params">(self, inorder, x1, y1, postorder, x2, y2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x1 &gt; y1:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> x2 &gt; y2:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        node = TreeNode(postorder[y2])</span><br><span class="line">        root_idx = inorder.index(postorder[y2], x1, y1 + <span class="number">1</span>)</span><br><span class="line">        left_size = root_idx - x1</span><br><span class="line">        node.left = self.buildTreeR(inorder, x1, root_idx - <span class="number">1</span>,</span><br><span class="line">                                    postorder, x2, x2 + left_size - <span class="number">1</span>)</span><br><span class="line">        node.right = self.buildTreeR(inorder, root_idx + <span class="number">1</span>, y1,</span><br><span class="line">                                     postorder, x2 + left_size, y2 - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, inorder, postorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type inorder: List[int]</span><br><span class="line">        :type postorder: List[int]</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.buildTreeR(inorder, <span class="number">0</span>, len(inorder) - <span class="number">1</span>,</span><br><span class="line">                               postorder, <span class="number">0</span>, len(postorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -265,13 +273,9 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
       
         <div class="post-tags">
           
-            <a href="/tags/Graphviz/" rel="tag">#Graphviz</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/String/" rel="tag">#String</a>
-          
-            <a href="/tags/自动机/" rel="tag">#自动机</a>
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -280,13 +284,11 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/06/integer-to-roman/" rel="prev">Leetcode解题-Integer to Roman</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/06/longest-common-prefix/" rel="next">Leetcode解题-Longest Common Prefix</a>
+              <a href="/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/" rel="next">Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal</a>
             
           </div>
         </div>
@@ -301,10 +303,10 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/06/valid-number/"
-     data-title="Leetcode解题-Valid Number"
+        <div class="ds-share flat" data-thread-key="2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/"
+     data-title="Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/09/06/valid-number/">
+     data-url="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +336,8 @@ Some examples:“0” =&amp;gt; true“ 0.1 “ =&amp;gt; true“abc” =&amp;gt
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/06/valid-number/"
-                   data-title="Leetcode解题-Valid Number" data-url="http://garfieldog.github.io/2015/09/06/valid-number/">
+              <div class="ds-thread" data-thread-key="2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/"
+                   data-title="Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal" data-url="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/">
               </div>
             
           </div>

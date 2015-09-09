@@ -7,8 +7,50 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Wed, 09 Sep 2015 02:46:36 GMT</pubDate>
+    <pubDate>Wed, 09 Sep 2015 04:02:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal]]></title>
+      <link>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/</link>
+      <guid>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/</guid>
+      <pubDate>Wed, 09 Sep 2015 03:26:42 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given inorder and postorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assum]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given inorder and postorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assume that duplicates do not exist in the tree.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p><a href="/2015/09/09/construct-binary-tree-from-preorder-and-inorder/">上一题</a>的姐妹版。如法炮制即可。</p>
+<p>PS: 从preorder和postorder是无法重建二叉树的。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTreeR</span><span class="params">(self, inorder, x1, y1, postorder, x2, y2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x1 &gt; y1:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> x2 &gt; y2:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        node = TreeNode(postorder[y2])</span><br><span class="line">        root_idx = inorder.index(postorder[y2], x1, y1 + <span class="number">1</span>)</span><br><span class="line">        left_size = root_idx - x1</span><br><span class="line">        node.left = self.buildTreeR(inorder, x1, root_idx - <span class="number">1</span>,</span><br><span class="line">                                    postorder, x2, x2 + left_size - <span class="number">1</span>)</span><br><span class="line">        node.right = self.buildTreeR(inorder, root_idx + <span class="number">1</span>, y1,</span><br><span class="line">                                     postorder, x2 + left_size, y2 - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, inorder, postorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type inorder: List[int]</span><br><span class="line">        :type postorder: List[int]</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.buildTreeR(inorder, <span class="number">0</span>, len(inorder) - <span class="number">1</span>,</span><br><span class="line">                               postorder, <span class="number">0</span>, len(postorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal]]></title>
+      <link>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/</link>
+      <guid>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/</guid>
+      <pubDate>Wed, 09 Sep 2015 02:57:25 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given preorder and inorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assume]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given preorder and inorder traversal of a tree, construct the binary tree.</p>
+<p>Note:<br>You may assume that duplicates do not exist in the tree.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>经典题，从前序遍历和中序遍历重建二叉树。前序遍历的第一个节点肯定是root，在中序遍历中查找root，可以把中序遍历分为两部分，root前面的是左子树的中序遍历，后面的是右子树的中序遍历。对应地，也可以确定前序遍历左子树和右子树的分界（通过中序遍历左子树的大小），这样递归可解。</p>
+<p>时间<code>O(n)</code>，空间平均<code>O(logn)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTreeR</span><span class="params">(self, preorder, x1, y1, inorder, x2, y2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x1 &gt; y1:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> x2 &gt; y2:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        node = TreeNode(preorder[x1])</span><br><span class="line">        root_idx = inorder.index(preorder[x1])</span><br><span class="line">        left_size = root_idx - x2</span><br><span class="line">        node.left = self.buildTreeR(preorder, x1 + <span class="number">1</span>, x1 + left_size,</span><br><span class="line">                                    inorder, x2, root_idx - <span class="number">1</span>)</span><br><span class="line">        node.right = self.buildTreeR(preorder, x1 + left_size + <span class="number">1</span>, y1,</span><br><span class="line">                                     inorder, root_idx + <span class="number">1</span>, y2)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, preorder, inorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type preorder: List[int]</span><br><span class="line">        :type inorder: List[int]</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.buildTreeR(preorder, <span class="number">0</span>, len(preorder) - <span class="number">1</span>,</span><br><span class="line">                               inorder, <span class="number">0</span>, len(inorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Populating Next Right Pointers in Each Node II]]></title>
@@ -26,8 +68,8 @@
 <p>Note:</p>
 <p>You may only use constant extra space.<br>For example,<br>Given the following binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \    \<br>    4   5    7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \    \<br>    4-&gt; 5 -&gt; 7 -&gt; NULL</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>我们<a href="/2015/09/08/populating-next-right-pointers-in-each-node/">上一题</a>的解法直接可以用在这一题上。</p>
-<h2 id="代码">代码</h2><p>直接看<a href="/2015/09/08/populating-next-right-pointers-in-each-node/">上一题</a>。</p>
+<h2 id="分析">分析</h2><p>我们<a href="/2015/09/09/populating-next-right-pointers-in-each-node/">上一题</a>的解法直接可以用在这一题上。</p>
+<h2 id="代码">代码</h2><p>直接看<a href="/2015/09/09/populating-next-right-pointers-in-each-node/">上一题</a>。</p>
 ]]></content:encoded>
       <comments>http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node-2/#disqus_thread</comments>
     </item>
@@ -409,48 +451,6 @@
 <h3 id="迭代">迭代</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLastWord</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type s: str</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        n = <span class="number">0</span></span><br><span class="line">        last_space = <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> c == <span class="string">' '</span>:</span><br><span class="line">                last_space = <span class="keyword">True</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            n = <span class="number">1</span> <span class="keyword">if</span> last_space <span class="keyword">else</span> n + <span class="number">1</span></span><br><span class="line">            last_space = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> n</span><br></pre></td></tr></table></figure>
 ]]></content:encoded>
       <comments>http://garfieldog.github.io/2015/09/06/length-of-last-word/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Simplify Path]]></title>
-      <link>http://garfieldog.github.io/2015/09/06/simplify-path/</link>
-      <guid>http://garfieldog.github.io/2015/09/06/simplify-path/</guid>
-      <pubDate>Sun, 06 Sep 2015 09:25:02 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an absolute path for a file (Unix-style), simplify it.</p>
-<p>For example,<br>path = “/home/“, =&gt]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an absolute path for a file (Unix-style), simplify it.</p>
-<p>For example,<br>path = “/home/“, =&gt; “/home”<br>path = “/a/./b/../../c/“, =&gt; “/c”</p>
-<p>Corner Cases:<br>Did you consider the case where path = “/../“?<br>In this case, you should return “/“.<br>Another corner case is the path might contain multiple slashes ‘/‘ together, such as “/home//foo/“.<br>In this case, you should ignore redundant slashes and return “/home/foo”.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>比较简单，用stack，注意corner cases。时间<code>O(n)</code>，空间<code>O(n)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simplifyPath</span><span class="params">(self, path)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type path: str</span><br><span class="line">        :rtype: str</span><br><span class="line">        """</span></span><br><span class="line">        ps = path.split(<span class="string">'/'</span>)</span><br><span class="line">        ss = []</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> ps:</span><br><span class="line">            <span class="keyword">if</span> p == <span class="string">'.'</span> <span class="keyword">or</span> p == <span class="string">''</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> p == <span class="string">'..'</span>:</span><br><span class="line">                <span class="keyword">if</span> len(ss) &gt; <span class="number">0</span>:</span><br><span class="line">                    ss.pop()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ss.append(p)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'/'</span> + <span class="string">'/'</span>.join(ss)</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/06/simplify-path/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Group Anagrams]]></title>
-      <link>http://garfieldog.github.io/2015/09/06/group-anagrams/</link>
-      <guid>http://garfieldog.github.io/2015/09/06/group-anagrams/</guid>
-      <pubDate>Sun, 06 Sep 2015 08:30:58 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an array of strings, group anagrams together.</p>
-<p>For example, given: [“eat”, “tea”, “tan”, “ate]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an array of strings, group anagrams together.</p>
-<p>For example, given: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],<br>Return:</p>
-<p>[<br>  [“ate”, “eat”,”tea”],<br>  [“nat”,”tan”],<br>  [“bat”]<br>]<br>Note:<br>For the return value, each inner list’s elements must follow the lexicographic order.<br>All inputs will be in lower-case.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>用哈希表，理论上可以时间<code>O(nlogn)</code>，空间<code>O(n)</code>。我们下面的实现由于用了数组而不是链表，所以要慢一些，最坏情况<code>O(n^2)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bisect <span class="keyword">import</span> bisect</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type strs: List[str]</span><br><span class="line">        :rtype: List[List[str]]</span><br><span class="line">        """</span></span><br><span class="line">        d = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">            key = <span class="string">''</span>.join(sorted(s))</span><br><span class="line">            d.setdefault(key, [])</span><br><span class="line">            rs = d[key]</span><br><span class="line">            idx = bisect(rs, s)</span><br><span class="line">            rs.insert(idx, s)</span><br><span class="line">        <span class="keyword">return</span> d.values()</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/06/group-anagrams/#disqus_thread</comments>
     </item>
     
   </channel>
