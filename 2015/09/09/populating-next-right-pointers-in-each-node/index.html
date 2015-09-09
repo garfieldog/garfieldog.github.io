@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode,两指针," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,27 +46,36 @@
 
 
 <meta name="description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
+Given a binary tree
+struct TreeLinkNode {
+  TreeLinkNode *left;
+  TreeLinkNode *right;
+  TreeLinkNode *next;
+}
+Populate each next pointer to point to its next right node. If there is no next right">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Remove Element">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/21/remove-element/index.html">
+<meta property="og:title" content="Leetcode解题-Populating Next Right Pointers in Each Node">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
-<meta property="og:updated_time" content="2015-08-21T03:04:19.000Z">
+Given a binary tree
+struct TreeLinkNode {
+  TreeLinkNode *left;
+  TreeLinkNode *right;
+  TreeLinkNode *next;
+}
+Populate each next pointer to point to its next right node. If there is no next right">
+<meta property="og:updated_time" content="2015-09-09T02:46:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Remove Element">
+<meta name="twitter:title" content="Leetcode解题-Populating Next Right Pointers in Each Node">
 <meta name="twitter:description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
+Given a binary tree
+struct TreeLinkNode {
+  TreeLinkNode *left;
+  TreeLinkNode *right;
+  TreeLinkNode *next;
+}
+Populate each next pointer to point to its next right node. If there is no next right">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +85,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
   };
 </script>
 
-  <title> Leetcode解题-Remove Element | Mew </title>
+  <title> Leetcode解题-Populating Next Right Pointers in Each Node | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +211,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           
           
             
-              Leetcode解题-Remove Element
+              Leetcode解题-Populating Next Right Pointers in Each Node
             
           
         </h1>
@@ -211,8 +220,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-21T10:49:09+08:00" content="2015-08-21">
-            2015-08-21
+          <time itemprop="dateCreated" datetime="2015-09-09T09:46:14+08:00" content="2015-09-09">
+            2015-09-09
           </time>
         </span>
 
@@ -237,8 +246,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/21/remove-element/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/21/remove-element/" itemprop="commentsCount"></span>
+              <a href="/2015/09/09/populating-next-right-pointers-in-each-node/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -253,12 +262,21 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p>Given a binary tree</p>
+<pre><code><span class="title">struct</span> TreeLinkNode {
+  <span class="title">TreeLinkNode</span> *left;
+  <span class="title">TreeLinkNode</span> *right;
+  <span class="title">TreeLinkNode</span> *next;
+}
+</code></pre><p>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.</p>
+<p>Initially, all next pointers are set to NULL.</p>
+<p>Note:</p>
+<p>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL</p>
 </blockquote>
-<p>删除数组中的给定元素。</p>
-<h2 id="分析">分析</h2><p>这是一道简单题，使用两指针，一个记录当前有效数组的尾部，一个遍历原数组。这样做的正确性在于，第一个指针之后、第二个指针之前的数组空间肯定是<code>安全的</code>（要么已经被复制到第一个指针之前的区域，要么是要删掉的值）。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type val: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n != val:</span><br><span class="line">                nums[i] = n</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>可以用广度优先遍历，用队列实现。其中用了<a href="/2015/09/07/binary-tree-zigzag-level-order-traversal/">Zigzag Level Traversal</a>中的一个技巧，在队列里加入None来分隔各个level。</p>
+<p>但这样空间复杂度是<code>O(n)</code>的，题目里要求<code>O(1)</code>。由于我们的节点多了一个指针，其实可以用这个指针来完成广度优先遍历，不再需要队列。方法是用一层一层遍历，当前层时把下一层节点的<code>next</code>指针设置好。</p>
+<h2 id="代码">代码</h2><h3 id="广度优先遍历,_空间O(n)">广度优先遍历, 空间<code>O(n)</code></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for binary tree with next pointer.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeLinkNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeLinkNode</span><br><span class="line">        :rtype: nothing</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        q = deque()</span><br><span class="line">        q.append(root)</span><br><span class="line">        q.append(<span class="keyword">None</span>)</span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            cur = q.popleft()</span><br><span class="line">            <span class="keyword">if</span> cur:</span><br><span class="line">                <span class="keyword">if</span> q:</span><br><span class="line">                    cur.next = q[<span class="number">0</span>]</span><br><span class="line">                <span class="keyword">if</span> cur.left:</span><br><span class="line">                    q.append(cur.left)</span><br><span class="line">                <span class="keyword">if</span> cur.right:</span><br><span class="line">                    q.append(cur.right)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> q:</span><br><span class="line">                    q.append(<span class="keyword">None</span>)  <span class="comment"># level end</span></span><br></pre></td></tr></table></figure>
+<h3 id="空间O(1)算法">空间O(1)算法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeLinkNode</span><br><span class="line">        :rtype: nothing</span><br><span class="line">        """</span></span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="comment"># a new level begins</span></span><br><span class="line">            prev = <span class="keyword">None</span>  <span class="comment"># prev node in the same level</span></span><br><span class="line">            next = <span class="keyword">None</span>  <span class="comment"># the first node of next level</span></span><br><span class="line">            <span class="keyword">while</span> cur:</span><br><span class="line">                <span class="comment"># once `next` is set, it will not change until next level</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> next:</span><br><span class="line">                    next = cur.left <span class="keyword">if</span> cur.left <span class="keyword">else</span> cur.right</span><br><span class="line">                <span class="keyword">if</span> cur.left:</span><br><span class="line">                    <span class="keyword">if</span> prev:</span><br><span class="line">                        prev.next = cur.left</span><br><span class="line">                    prev = cur.left</span><br><span class="line">                <span class="keyword">if</span> cur.right:</span><br><span class="line">                    <span class="keyword">if</span> prev:</span><br><span class="line">                        prev.next = cur.right</span><br><span class="line">                    prev = cur.right</span><br><span class="line">                cur = cur.next  <span class="comment"># it is level order traversal!</span></span><br><span class="line">            <span class="comment"># level ends</span></span><br><span class="line">            cur = next</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -267,11 +285,9 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/两指针/" rel="tag">#两指针</a>
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -280,13 +296,13 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/21/next-permutation/" rel="prev">Leetcode解题-Next Permutation</a>
+              <a href="/2015/09/09/populating-next-right-pointers-in-each-node-2/" rel="prev">Leetcode解题-Populating Next Right Pointers in Each Node II</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/21/4-sum/" rel="next">Leetcode解题-4Sum</a>
+              <a href="/2015/09/08/flatten-binary-tree-to-linked-list/" rel="next">Leetcode解题-Flatten Binary Tree to Linked List</a>
             
           </div>
         </div>
@@ -301,10 +317,10 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/21/remove-element/"
-     data-title="Leetcode解题-Remove Element"
+        <div class="ds-share flat" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node/"
+     data-title="Leetcode解题-Populating Next Right Pointers in Each Node"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/21/remove-element/">
+     data-url="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +350,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/21/remove-element/"
-                   data-title="Leetcode解题-Remove Element" data-url="http://garfieldog.github.io/2015/08/21/remove-element/">
+              <div class="ds-thread" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node/"
+                   data-title="Leetcode解题-Populating Next Right Pointers in Each Node" data-url="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node/">
               </div>
             
           </div>
@@ -440,7 +456,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历,_空间O(n)"><span class="nav-number">3.1.</span> <span class="nav-text">广度优先遍历, 空间O(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间O(1)算法"><span class="nav-number">3.2.</span> <span class="nav-text">空间O(1)算法</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

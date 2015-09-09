@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode,两指针," />
+  <meta name="keywords" content="Leetcode,Tree," />
 
 
 
@@ -46,27 +46,27 @@
 
 
 <meta name="description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
+Follow up for problem “Populating Next Right Pointers in Each Node”.
+What if the given tree could be any binary tree? Would your previous solution still work?
+Note:
+You may only use constant extra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Remove Element">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/21/remove-element/index.html">
+<meta property="og:title" content="Leetcode解题-Populating Next Right Pointers in Each Node II">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node-2/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
-<meta property="og:updated_time" content="2015-08-21T03:04:19.000Z">
+Follow up for problem “Populating Next Right Pointers in Each Node”.
+What if the given tree could be any binary tree? Would your previous solution still work?
+Note:
+You may only use constant extra">
+<meta property="og:updated_time" content="2015-09-09T02:46:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Remove Element">
+<meta name="twitter:title" content="Leetcode解题-Populating Next Right Pointers in Each Node II">
 <meta name="twitter:description" content="描述
-Given an array and a value, remove all instances of that value in place and return the new length.
-The order of elements can be changed. It doesn’t matter what you leave beyond the new length.
-
-删除数">
+Follow up for problem “Populating Next Right Pointers in Each Node”.
+What if the given tree could be any binary tree? Would your previous solution still work?
+Note:
+You may only use constant extra">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +76,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
   };
 </script>
 
-  <title> Leetcode解题-Remove Element | Mew </title>
+  <title> Leetcode解题-Populating Next Right Pointers in Each Node II | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +202,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           
           
             
-              Leetcode解题-Remove Element
+              Leetcode解题-Populating Next Right Pointers in Each Node II
             
           
         </h1>
@@ -211,8 +211,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-21T10:49:09+08:00" content="2015-08-21">
-            2015-08-21
+          <time itemprop="dateCreated" datetime="2015-09-09T10:20:45+08:00" content="2015-09-09">
+            2015-09-09
           </time>
         </span>
 
@@ -237,8 +237,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/21/remove-element/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/21/remove-element/" itemprop="commentsCount"></span>
+              <a href="/2015/09/09/populating-next-right-pointers-in-each-node-2/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node-2/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -253,12 +253,13 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
-<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p>Follow up for problem “Populating Next Right Pointers in Each Node”.</p>
+<p>What if the given tree could be any binary tree? Would your previous solution still work?</p>
+<p>Note:</p>
+<p>You may only use constant extra space.<br>For example,<br>Given the following binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \    \<br>    4   5    7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \    \<br>    4-&gt; 5 -&gt; 7 -&gt; NULL</p>
 </blockquote>
-<p>删除数组中的给定元素。</p>
-<h2 id="分析">分析</h2><p>这是一道简单题，使用两指针，一个记录当前有效数组的尾部，一个遍历原数组。这样做的正确性在于，第一个指针之后、第二个指针之前的数组空间肯定是<code>安全的</code>（要么已经被复制到第一个指针之前的区域，要么是要删掉的值）。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type val: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n != val:</span><br><span class="line">                nums[i] = n</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> i</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>我们<a href="/2015/09/08/populating-next-right-pointers-in-each-node/">上一题</a>的解法直接可以用在这一题上。</p>
+<h2 id="代码">代码</h2><p>直接看<a href="/2015/09/08/populating-next-right-pointers-in-each-node/">上一题</a>。</p>
 </span>
       
     </div>
@@ -267,11 +268,9 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/两指针/" rel="tag">#两指针</a>
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -280,13 +279,11 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/21/next-permutation/" rel="prev">Leetcode解题-Next Permutation</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/21/4-sum/" rel="next">Leetcode解题-4Sum</a>
+              <a href="/2015/09/09/populating-next-right-pointers-in-each-node/" rel="next">Leetcode解题-Populating Next Right Pointers in Each Node</a>
             
           </div>
         </div>
@@ -301,10 +298,10 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/21/remove-element/"
-     data-title="Leetcode解题-Remove Element"
+        <div class="ds-share flat" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node-2/"
+     data-title="Leetcode解题-Populating Next Right Pointers in Each Node II"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/21/remove-element/">
+     data-url="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node-2/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +331,8 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/21/remove-element/"
-                   data-title="Leetcode解题-Remove Element" data-url="http://garfieldog.github.io/2015/08/21/remove-element/">
+              <div class="ds-thread" data-thread-key="2015/09/09/populating-next-right-pointers-in-each-node-2/"
+                   data-title="Leetcode解题-Populating Next Right Pointers in Each Node II" data-url="http://garfieldog.github.io/2015/09/09/populating-next-right-pointers-in-each-node-2/">
               </div>
             
           </div>
@@ -440,7 +437,7 @@ The order of elements can be changed. It doesn’t matter what you leave beyond 
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
