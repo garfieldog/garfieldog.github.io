@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/09/convert-sorted-list-to-binary-search-tree/</loc>
+    <lastmod>2015-09-09T07:19:08.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/09/convert-sorted-array-to-binary-search-tree/</loc>
+    <lastmod>2015-09-09T06:54:21.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/09/validate-binary-search-tree/</loc>
+    <lastmod>2015-09-09T06:36:21.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/</loc>
-    <lastmod>2015-09-09T06:17:04.000Z</lastmod>
+    <lastmod>2015-09-09T06:23:21.000Z</lastmod>
   </url>
   
   <url>
