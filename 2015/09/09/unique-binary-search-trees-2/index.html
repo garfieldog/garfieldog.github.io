@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,链表," />
+  <meta name="keywords" content="Leetcode,Tree,动态规划," />
 
 
 
@@ -46,24 +46,24 @@
 
 
 <meta name="description" content="描述
-Given a linked list, swap every two adjacent nodes and return its head.
-For example,Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3.
-Your algorithm should use only cons">
+Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.
+For example,Given n = 3, your program should return all 5 unique BST’s shown below.
+   1         3     3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Swap Nodes In Pairs">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/26/swap-nodes-in-pairs/index.html">
+<meta property="og:title" content="Leetcode解题-Unique Binary Search Trees II">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given a linked list, swap every two adjacent nodes and return its head.
-For example,Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3.
-Your algorithm should use only cons">
-<meta property="og:updated_time" content="2015-08-26T06:58:23.000Z">
+Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.
+For example,Given n = 3, your program should return all 5 unique BST’s shown below.
+   1         3     3">
+<meta property="og:updated_time" content="2015-09-09T06:17:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Swap Nodes In Pairs">
+<meta name="twitter:title" content="Leetcode解题-Unique Binary Search Trees II">
 <meta name="twitter:description" content="描述
-Given a linked list, swap every two adjacent nodes and return its head.
-For example,Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3.
-Your algorithm should use only cons">
+Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.
+For example,Given n = 3, your program should return all 5 unique BST’s shown below.
+   1         3     3">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +73,7 @@ Your algorithm should use only cons">
   };
 </script>
 
-  <title> Leetcode解题-Swap Nodes In Pairs | Mew </title>
+  <title> Leetcode解题-Unique Binary Search Trees II | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -199,7 +199,7 @@ Your algorithm should use only cons">
           
           
             
-              Leetcode解题-Swap Nodes In Pairs
+              Leetcode解题-Unique Binary Search Trees II
             
           
         </h1>
@@ -208,8 +208,8 @@ Your algorithm should use only cons">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-26T14:34:09+08:00" content="2015-08-26">
-            2015-08-26
+          <time itemprop="dateCreated" datetime="2015-09-09T13:58:37+08:00" content="2015-09-09">
+            2015-09-09
           </time>
         </span>
 
@@ -234,8 +234,8 @@ Your algorithm should use only cons">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/26/swap-nodes-in-pairs/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/26/swap-nodes-in-pairs/" itemprop="commentsCount"></span>
+              <a href="/2015/09/09/unique-binary-search-trees-2/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/unique-binary-search-trees-2/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -250,12 +250,12 @@ Your algorithm should use only cons">
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given a linked list, swap every two adjacent nodes and return its head.</p>
-<p>For example,<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
-<p>Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.</p>
+<p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
+<p>For example,<br>Given n = 3, your program should return all 5 unique BST’s shown below.</p>
+<p>   1         3     3      2      1<br>    \       /     /      / \      \<br>     3     2     1      1   3      2<br>    /     /       \                 \<br>   2     1         2                 3</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>遍历链表，隔一个数（分奇偶）把当前数插到它前一个数的前面。时间<code>O(n)</code>，空间<code>O(1)</code>。</p>
-<h2 id="实现">实现</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: ListNode</span><br><span class="line">        """</span></span><br><span class="line">        dummy1 = ListNode(-<span class="number">1</span>)</span><br><span class="line">        dummy2 = ListNode(-<span class="number">1</span>)</span><br><span class="line">        dummy1.next = dummy2</span><br><span class="line">        dummy2.next = head</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        prev = dummy1</span><br><span class="line">        cur = head</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> i % <span class="number">2</span>:</span><br><span class="line">                next = cur.next</span><br><span class="line">                prev.next.next = cur.next</span><br><span class="line">                cur.next = prev.next</span><br><span class="line">                prev.next = cur</span><br><span class="line">                cur = next</span><br><span class="line">                prev = prev.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = cur.next</span><br><span class="line">                prev = prev.next</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> dummy2.next</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p><a href="/2015/09/09/unique-binary-search-trees/">上一题</a>只需要数数，这一题要求把所有的树都构建出来。思路一样，用递归更直观一些。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTreesR</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> start &gt; end:</span><br><span class="line">            <span class="keyword">return</span> [<span class="keyword">None</span>]</span><br><span class="line"></span><br><span class="line">        rs = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(start, end + <span class="number">1</span>):</span><br><span class="line">            lefts = self.generateTreesR(start, i - <span class="number">1</span>)</span><br><span class="line">            rights = self.generateTreesR(i + <span class="number">1</span>, end)</span><br><span class="line">            <span class="keyword">for</span> left <span class="keyword">in</span> lefts:</span><br><span class="line">                <span class="keyword">for</span> right <span class="keyword">in</span> rights:</span><br><span class="line">                    node = TreeNode(i)</span><br><span class="line">                    node.left = left</span><br><span class="line">                    node.right = right</span><br><span class="line">                    rs.append(node)</span><br><span class="line">        <span class="keyword">return</span> rs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[TreeNode]</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.generateTreesR(<span class="number">1</span>, n)</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -266,7 +266,9 @@ Your algorithm should use only cons">
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
-            <a href="/tags/链表/" rel="tag">#链表</a>
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
+          
+            <a href="/tags/动态规划/" rel="tag">#动态规划</a>
           
         </div>
       
@@ -275,13 +277,11 @@ Your algorithm should use only cons">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/26/reverse-nodes-in-k-group/" rel="prev">Leetcode解题-Reverse Nodes in k-Group</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/26/remove-nth-node-from-end-of-list/" rel="next">Leetcode解题-Remove Nth node From End of List</a>
+              <a href="/2015/09/09/unique-binary-search-trees/" rel="next">Leetcode解题-Unique Binary Search Trees</a>
             
           </div>
         </div>
@@ -296,10 +296,10 @@ Your algorithm should use only cons">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/26/swap-nodes-in-pairs/"
-     data-title="Leetcode解题-Swap Nodes In Pairs"
+        <div class="ds-share flat" data-thread-key="2015/09/09/unique-binary-search-trees-2/"
+     data-title="Leetcode解题-Unique Binary Search Trees II"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/26/swap-nodes-in-pairs/">
+     data-url="http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -329,8 +329,8 @@ Your algorithm should use only cons">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/26/swap-nodes-in-pairs/"
-                   data-title="Leetcode解题-Swap Nodes In Pairs" data-url="http://garfieldog.github.io/2015/08/26/swap-nodes-in-pairs/">
+              <div class="ds-thread" data-thread-key="2015/09/09/unique-binary-search-trees-2/"
+                   data-title="Leetcode解题-Unique Binary Search Trees II" data-url="http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/">
               </div>
             
           </div>
@@ -435,7 +435,7 @@ Your algorithm should use only cons">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
