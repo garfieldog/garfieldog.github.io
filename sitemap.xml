@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/09/sum-root-to-leaf-numbers/</loc>
+    <lastmod>2015-09-09T09:29:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/09/binary-tree-maximum-path-sum/</loc>
+    <lastmod>2015-09-09T09:07:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/09/path-sum-2/</loc>
+    <lastmod>2015-09-09T08:35:22.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/09/path-sum/</loc>
+    <lastmod>2015-09-09T07:59:41.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/09/maximum-depth-of-binary-tree/</loc>
     <lastmod>2015-09-09T07:43:15.000Z</lastmod>
   </url>
