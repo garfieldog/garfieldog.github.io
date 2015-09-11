@@ -7,8 +7,94 @@
     <link>http://garfieldog.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[只有猪肉卷是永恒的]]></description>
-    <pubDate>Fri, 11 Sep 2015 07:24:53 GMT</pubDate>
+    <pubDate>Fri, 11 Sep 2015 09:43:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Subsets II]]></title>
+      <link>http://garfieldog.github.io/2015/09/11/subsets-2/</link>
+      <guid>http://garfieldog.github.io/2015/09/11/subsets-2/</guid>
+      <pubDate>Fri, 11 Sep 2015 08:38:32 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a collection of integers that might contain duplicates, nums, return all possible subsets.</p>
+<p>N]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a collection of integers that might contain duplicates, nums, return all possible subsets.</p>
+<p>Note:<br>Elements in a subset must be in non-descending order.<br>The solution set must not contain duplicate subsets.<br>For example,<br>If nums = [1,2,2], a solution is:</p>
+<p>[<br>  [2],<br>  <a href="/2015/09/11/subsets/">1</a>,<br>  [1,2,2],<br>  [2,2],<br>  [1,2],<br>  []<br>]</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>和<a href="/2015/09/11/subsets/">Subsets</a>做法基本一样，只是要注意去掉多余的子集。这里采用的方法是，判断当前元素是否和上个元素相等，如果相等，则只扩展上次添加了的子集们，如果不等，就扩展全部。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># @param &#123;integer[]&#125; nums</span></span><br><span class="line">    <span class="comment"># @return &#123;integer[][]&#125;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsetsWithDup</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        rs = [[]]</span><br><span class="line">        nums.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line">        n = len(nums)</span><br><span class="line">        last_s = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">            s = len(rs)</span><br><span class="line">            start = last_s <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> nums[i] == nums[i - <span class="number">1</span>] <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(start, s):</span><br><span class="line">                rs.append([nums[i]] + rs[j])</span><br><span class="line">            last_s = s</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/11/subsets-2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Subsets]]></title>
+      <link>http://garfieldog.github.io/2015/09/11/subsets/</link>
+      <guid>http://garfieldog.github.io/2015/09/11/subsets/</guid>
+      <pubDate>Fri, 11 Sep 2015 08:25:33 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a set of distinct integers, nums, return all possible subsets.</p>
+<p>Note:<br>Elements in a subset]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Given a set of distinct integers, nums, return all possible subsets.</p>
+<p>Note:<br>Elements in a subset must be in non-descending order.<br>The solution set must not contain duplicate subsets.<br>For example,<br>If nums = [1,2,3], a solution is:</p>
+<p>[<br>  [3],<br>  [1],<br>  [2],<br>  [1,2,3],<br>  [1,3],<br>  [2,3],<br>  [1,2],<br>  []<br>]</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>生成全部子集，递归很容易，改成迭代也不难，时间<code>O(2^n)</code>。</p>
+<h2 id="代码">代码</h2><h3 id="递归">递归</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> [[]]</span><br><span class="line">        nums.sort()</span><br><span class="line">        subsets = self.subsets(nums[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(subsets)):</span><br><span class="line">            subsets.append(nums[:<span class="number">1</span>] + subsets[i])</span><br><span class="line">        <span class="keyword">return</span> subsets</span><br></pre></td></tr></table></figure>
+<h3 id="迭代">迭代</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: List[List[int]]</span><br><span class="line">        """</span></span><br><span class="line">        rs = [[]]</span><br><span class="line">        nums.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> nums:</span><br><span class="line">            n = len(rs)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n):</span><br><span class="line">                rs.append([x] + rs[i])</span><br><span class="line">        <span class="keyword">return</span> rs</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/11/subsets/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Search a 2D Matrix II]]></title>
+      <link>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix-2/</link>
+      <guid>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix-2/</guid>
+      <pubDate>Fri, 11 Sep 2015 07:56:13 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following ]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:</p>
+<p>Integers in each row are sorted in ascending from left to right.<br>Integers in each column are sorted in ascending from top to bottom.<br>For example,</p>
+<p>Consider the following matrix:</p>
+<p>[<br>  [1,   4,  7, 11, 15],<br>  [2,   5,  8, 12, 19],<br>  [3,   6,  9, 16, 22],<br>  [10, 13, 14, 17, 24],<br>  [18, 21, 23, 26, 30]<br>]<br>Given target = 5, return true.</p>
+<p>Given target = 20, return false.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p><a href="/2015/09/11/search-a-2d-matrix/">上一题</a>的升级版。这次矩阵每一行是排序的，每一列也是排序的，但不保证前一行的所有数小于后一行的。仍然使用二分查找，不过每次只能剔除<code>1/4</code>的元素。(如果中心值比目标大，则剔除右下角的矩阵块，如果小，则剔除左上角)</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchMatrixR</span><span class="params">(self, matrix, x1, y1, x2, y2, target)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x1 &gt; x2 <span class="keyword">or</span> y1 &gt; y2:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        mid_x = x1 + (x2 - x1) / <span class="number">2</span></span><br><span class="line">        mid_y = y1 + (y2 - y1) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> matrix[mid_x][mid_y] == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[mid_x][mid_y] &gt; target:</span><br><span class="line">            <span class="keyword">return</span> self.searchMatrixR(matrix, x1, y1, mid_x - <span class="number">1</span>, y2, target) <span class="keyword">or</span> \</span><br><span class="line">                self.searchMatrixR(matrix, mid_x, y1, x2, mid_y - <span class="number">1</span>, target)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.searchMatrixR(matrix, x1, mid_y + <span class="number">1</span>, mid_x, y2, target) <span class="keyword">or</span> \</span><br><span class="line">                self.searchMatrixR(matrix, mid_x + <span class="number">1</span>, y1, x2, y2, target)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchMatrix</span><span class="params">(self, matrix, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type matrix: List[List[int]]</span><br><span class="line">        :type target: int</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        m = len(matrix)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> self.searchMatrixR(matrix, <span class="number">0</span>, <span class="number">0</span>, m - <span class="number">1</span>, n - <span class="number">1</span>, target)</span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix-2/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title><![CDATA[Leetcode解题-Search a 2D Matrix]]></title>
+      <link>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix/</link>
+      <guid>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix/</guid>
+      <pubDate>Fri, 11 Sep 2015 07:29:34 GMT</pubDate>
+      <description>
+      <![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following ]]>
+      </description>
+      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
+<p>Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:</p>
+<p>Integers in each row are sorted from left to right.<br>The first integer of each row is greater than the last integer of the previous row.<br>For example,</p>
+<p>Consider the following matrix:</p>
+<p>[<br>  [1,   3,  5,  7],<br>  [10, 11, 16, 20],<br>  [23, 30, 34, 50]<br>]<br>Given target = 3, return true.</p>
+</blockquote>
+<h2 id="分析">分析</h2><p>就是二分查找，多一个坐标转换。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchMatrix</span><span class="params">(self, matrix, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type matrix: List[List[int]]</span><br><span class="line">        :type target: int</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        m = len(matrix)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        n = len(matrix[<span class="number">0</span>])</span><br><span class="line">        low = <span class="number">0</span></span><br><span class="line">        high = m * n - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            mid = low + (high - low) / <span class="number">2</span></span><br><span class="line">            x, y = divmod(mid, n)</span><br><span class="line">            <span class="keyword">if</span> matrix[x][y] == target:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">elif</span> matrix[x][y] &gt; target:</span><br><span class="line">                high = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                low = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+]]></content:encoded>
+      <comments>http://garfieldog.github.io/2015/09/11/search-a-2d-matrix/#disqus_thread</comments>
+    </item>
     
     <item>
       <title><![CDATA[Leetcode解题-Search Insert Position]]></title>
@@ -341,90 +427,6 @@
 <h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    cur = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedListToBSTR</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> start &gt; end:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        root = (end - start) / <span class="number">2</span> + start</span><br><span class="line">        left = self.sortedListToBSTR(start, root - <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># now `self.cur` is root</span></span><br><span class="line">        node = TreeNode(self.cur.val)</span><br><span class="line">        self.cur = self.cur.next</span><br><span class="line">        right = self.sortedListToBSTR(root + <span class="number">1</span>, end)</span><br><span class="line">        node.left = left</span><br><span class="line">        node.right = right</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedListToBST</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        self.cur = head</span><br><span class="line">        n = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> head:</span><br><span class="line">            n += <span class="number">1</span></span><br><span class="line">            head = head.next</span><br><span class="line">        <span class="keyword">return</span> self.sortedListToBSTR(<span class="number">0</span>, n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 ]]></content:encoded>
       <comments>http://garfieldog.github.io/2015/09/09/convert-sorted-list-to-binary-search-tree/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Convert Sorted Array to Binary Search Tree]]></title>
-      <link>http://garfieldog.github.io/2015/09/09/convert-sorted-array-to-binary-search-tree/</link>
-      <guid>http://garfieldog.github.io/2015/09/09/convert-sorted-array-to-binary-search-tree/</guid>
-      <pubDate>Wed, 09 Sep 2015 06:37:40 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
-</b]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>递归分治法解很容易，时间<code>O(n)</code>，空间平均<code>O(logn)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedArrayToBSTR</span><span class="params">(self, nums, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> start &gt; end:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        root = (end - start) / <span class="number">2</span> + start</span><br><span class="line">        node = TreeNode(nums[root])</span><br><span class="line">        node.left = self.sortedArrayToBSTR(nums, start, root - <span class="number">1</span>)</span><br><span class="line">        node.right = self.sortedArrayToBSTR(nums, root + <span class="number">1</span>, end)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedArrayToBST</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.sortedArrayToBSTR(nums, <span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/09/convert-sorted-array-to-binary-search-tree/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Validate Binary Search Tree]]></title>
-      <link>http://garfieldog.github.io/2015/09/09/validate-binary-search-tree/</link>
-      <guid>http://garfieldog.github.io/2015/09/09/validate-binary-search-tree/</guid>
-      <pubDate>Wed, 09 Sep 2015 06:20:14 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
-<p>Assume a BST is defined ]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
-<p>Assume a BST is defined as follows:</p>
-<p>The left subtree of a node contains only nodes with keys less than the node’s key.<br>The right subtree of a node contains only nodes with keys greater than the node’s key.<br>Both the left and right subtrees must also be binary search trees.</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>检查一个二叉搜索树是不是合法，递归去做，向下传递一个允许的取值范围。时间<code>O(n)</code>，空间平均<code>O(logn)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidBSTR</span><span class="params">(self, root, low, high)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span> root.val &gt;= high <span class="keyword">or</span> root.val &lt;= low:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isValidBSTR(root.left, low, root.val):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.isValidBSTR(root.right, root.val, high):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValidBST</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type root: TreeNode</span><br><span class="line">        :rtype: bool</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.isValidBSTR(root, float(<span class="string">'-inf'</span>), float(<span class="string">'inf'</span>))</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/09/validate-binary-search-tree/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Unique Binary Search Trees II]]></title>
-      <link>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/</link>
-      <guid>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/</guid>
-      <pubDate>Wed, 09 Sep 2015 05:58:37 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
-<p>For e]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given n, generate all structurally unique BST’s (binary search trees) that store values 1…n.</p>
-<p>For example,<br>Given n = 3, your program should return all 5 unique BST’s shown below.</p>
-<p>   1         3     3      2      1<br>    \       /     /      / \      \<br>     3     2     1      1   3      2<br>    /     /       \                 \<br>   2     1         2                 3</p>
-</blockquote>
-<h2 id="分析">分析</h2><p><a href="/2015/09/09/unique-binary-search-trees/">上一题</a>只需要数数，这一题要求把所有的树都构建出来。思路一样，用递归更直观一些。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTreesR</span><span class="params">(self, start, end)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> start &gt; end:</span><br><span class="line">            <span class="keyword">return</span> [<span class="keyword">None</span>]</span><br><span class="line"></span><br><span class="line">        rs = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(start, end + <span class="number">1</span>):</span><br><span class="line">            lefts = self.generateTreesR(start, i - <span class="number">1</span>)</span><br><span class="line">            rights = self.generateTreesR(i + <span class="number">1</span>, end)</span><br><span class="line">            <span class="keyword">for</span> left <span class="keyword">in</span> lefts:</span><br><span class="line">                <span class="keyword">for</span> right <span class="keyword">in</span> rights:</span><br><span class="line">                    node = TreeNode(i)</span><br><span class="line">                    node.left = left</span><br><span class="line">                    node.right = right</span><br><span class="line">                    rs.append(node)</span><br><span class="line">        <span class="keyword">return</span> rs</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateTrees</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: List[TreeNode]</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.generateTreesR(<span class="number">1</span>, n)</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees-2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title><![CDATA[Leetcode解题-Unique Binary Search Trees]]></title>
-      <link>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees/</link>
-      <guid>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees/</guid>
-      <pubDate>Wed, 09 Sep 2015 05:35:38 GMT</pubDate>
-      <description>
-      <![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?</p>
-<p>For examp]]>
-      </description>
-      <content:encoded><![CDATA[<h2 id="描述">描述</h2><blockquote>
-<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1…n?</p>
-<p>For example,<br>Given n = 3, there are a total of 5 unique BST’s.</p>
-<p>   1         3     3      2      1<br>    \       /     /      / \      \<br>     3     2     1      1   3      2<br>    /     /       \                 \<br>   2     1         2                 3</p>
-</blockquote>
-<h2 id="分析">分析</h2><p>因为是搜索二叉树，所以一旦选定根节点，那么左子树和右子树含有哪些元素就确定了，那么显然可以变成一个递归的问题。以选定节点为根的搜索二叉树有<code>左子树可能的个数 * 右子树可能的个数</code>。所以给定总元素数<code>n</code>，不同的搜索二叉树个数<code>f(n)</code>就有：</p>
-<p>$$ f(n) = \sum_{i=0}^{n - 1} f(i)*f(n - 1 - i) $$</p>
-<p>用动态规划解，时间<code>O(n^2)</code>，空间<code>O(n)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numTrees</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type n: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        arr = [<span class="number">0</span>] * (n + <span class="number">1</span>)</span><br><span class="line">        arr[<span class="number">0</span>] = arr[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(i):</span><br><span class="line">                arr[i] += arr[j] * arr[i - <span class="number">1</span> - j]</span><br><span class="line">        <span class="keyword">return</span> arr[n]</span><br></pre></td></tr></table></figure>
-]]></content:encoded>
-      <comments>http://garfieldog.github.io/2015/09/09/unique-binary-search-trees/#disqus_thread</comments>
     </item>
     
   </channel>
