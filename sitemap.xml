@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/11/search-insert-position/</loc>
+    <lastmod>2015-09-11T07:24:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/11/search-for-a-range/</loc>
+    <lastmod>2015-09-11T07:10:12.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/11/sort-colors/</loc>
     <lastmod>2015-09-11T05:23:01.000Z</lastmod>
   </url>

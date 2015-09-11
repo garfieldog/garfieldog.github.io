@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Array,Leetcode,二分法," />
 
 
 
@@ -46,24 +46,21 @@
 
 
 <meta name="description" content="描述
-Rotate an array of n elements to the right by k steps.
-For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
-Note:Try to come up as many solutions as you can,">
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Rotate Array">
-<meta property="og:url" content="http://garfieldog.github.io/2015/08/26/rotate-array/index.html">
+<meta property="og:title" content="Leetcode解题-Search Insert Position">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/11/search-insert-position/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Rotate an array of n elements to the right by k steps.
-For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
-Note:Try to come up as many solutions as you can,">
-<meta property="og:updated_time" content="2015-08-26T04:21:43.000Z">
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
+<meta property="og:updated_time" content="2015-09-11T07:24:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Rotate Array">
+<meta name="twitter:title" content="Leetcode解题-Search Insert Position">
 <meta name="twitter:description" content="描述
-Rotate an array of n elements to the right by k steps.
-For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
-Note:Try to come up as many solutions as you can,">
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +70,7 @@ Note:Try to come up as many solutions as you can,">
   };
 </script>
 
-  <title> Leetcode解题-Rotate Array | Mew </title>
+  <title> Leetcode解题-Search Insert Position | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -199,7 +196,7 @@ Note:Try to come up as many solutions as you can,">
           
           
             
-              Leetcode解题-Rotate Array
+              Leetcode解题-Search Insert Position
             
           
         </h1>
@@ -208,8 +205,8 @@ Note:Try to come up as many solutions as you can,">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-08-26T11:56:18+08:00" content="2015-08-26">
-            2015-08-26
+          <time itemprop="dateCreated" datetime="2015-09-11T15:11:39+08:00" content="2015-09-11">
+            2015-09-11
           </time>
         </span>
 
@@ -234,8 +231,8 @@ Note:Try to come up as many solutions as you can,">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/08/26/rotate-array/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/26/rotate-array/" itemprop="commentsCount"></span>
+              <a href="/2015/09/11/search-insert-position/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/11/search-insert-position/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -250,12 +247,12 @@ Note:Try to come up as many solutions as you can,">
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Rotate an array of n elements to the right by k steps.</p>
-<p>For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].</p>
-<p>Note:<br>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</p>
+<p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<p>Here are few examples.<br>[1,3,5,6], 5 → 2<br>[1,3,5,6], 2 → 1<br>[1,3,5,6], 7 → 4<br>[1,3,5,6], 0 → 0</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>如果允许开新数组，那就太简单了，当然我们要找空间<code>O(1)</code>的解法。把原数组分为两段，分别翻转，然后把数组整体翻转，就得到了结果。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type k: int</span><br><span class="line">        :rtype: void Do not return anything, modify nums in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        k = (len(nums) - k) % len(nums)</span><br><span class="line">        self.reverse(nums, <span class="number">0</span>, k - <span class="number">1</span>)</span><br><span class="line">        self.reverse(nums, k, len(nums) - <span class="number">1</span>)</span><br><span class="line">        self.reverse(nums, <span class="number">0</span>, len(nums) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, nums, x, y)</span>:</span></span><br><span class="line">        k = (y - x + <span class="number">1</span>) / <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(k):</span><br><span class="line">            nums[x + i], nums[y - i] = nums[y - i], nums[x + i]</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>其实就是上一题<a href="/2015/09/11/search-for-a-range/">Search for a Range</a>实现的<code>lowerBound</code>。</p>
+<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchInsert</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type nums: List[int]</span><br><span class="line">        :type target: int</span><br><span class="line">        :rtype: int</span><br><span class="line">        """</span></span><br><span class="line">        low = <span class="number">0</span></span><br><span class="line">        high = len(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            mid = low + (high - low) / <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt;= target:</span><br><span class="line">                high = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                low = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> low</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -268,6 +265,8 @@ Note:Try to come up as many solutions as you can,">
           
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
+            <a href="/tags/二分法/" rel="tag">#二分法</a>
+          
         </div>
       
 
@@ -275,13 +274,11 @@ Note:Try to come up as many solutions as you can,">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/26/remove-nth-node-from-end-of-list/" rel="prev">Leetcode解题-Remove Nth node From End of List</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/26/rotate-list/" rel="next">Leetcode解题-Rotate List</a>
+              <a href="/2015/09/11/search-for-a-range/" rel="next">Leetcode解题-Search for a Range</a>
             
           </div>
         </div>
@@ -296,10 +293,10 @@ Note:Try to come up as many solutions as you can,">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/08/26/rotate-array/"
-     data-title="Leetcode解题-Rotate Array"
+        <div class="ds-share flat" data-thread-key="2015/09/11/search-insert-position/"
+     data-title="Leetcode解题-Search Insert Position"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/08/26/rotate-array/">
+     data-url="http://garfieldog.github.io/2015/09/11/search-insert-position/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -329,8 +326,8 @@ Note:Try to come up as many solutions as you can,">
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/08/26/rotate-array/"
-                   data-title="Leetcode解题-Rotate Array" data-url="http://garfieldog.github.io/2015/08/26/rotate-array/">
+              <div class="ds-thread" data-thread-key="2015/09/11/search-insert-position/"
+                   data-title="Leetcode解题-Search Insert Position" data-url="http://garfieldog.github.io/2015/09/11/search-insert-position/">
               </div>
             
           </div>
