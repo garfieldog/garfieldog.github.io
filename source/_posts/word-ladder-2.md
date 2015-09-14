@@ -1,6 +1,6 @@
 title: Leetcode解题-Word Ladder II
 date: 2015-09-14 16:18:05
-tags: [Leetcode, BFS]
+tags: [Leetcode, BFS, Graph]
 categories: [编程题]
 ---
 
