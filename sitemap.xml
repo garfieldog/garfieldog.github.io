@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/14/permutations-2/</loc>
+    <lastmod>2015-09-14T06:44:40.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/14/permutations/</loc>
+    <lastmod>2015-09-14T05:42:39.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/11/subsets-2/</loc>
     <lastmod>2015-09-11T09:43:38.000Z</lastmod>
   </url>
