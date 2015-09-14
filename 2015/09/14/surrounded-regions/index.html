@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,Tree," />
+  <meta name="keywords" content="BFS,Leetcode," />
 
 
 
@@ -46,27 +46,24 @@
 
 
 <meta name="description" content="描述
-Given preorder and inorder traversal of a tree, construct the binary tree.
-Note:You may assume that duplicates do not exist in the tree.
-
-分析经典题，从前序遍历和中序遍历重建二叉树。前序遍历的第一个节点肯定是root，在中序遍历中查找root，可以把中序遍">
+Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
+For example,X X X XX O O XX X O XX O X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal">
-<meta property="og:url" content="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/index.html">
+<meta property="og:title" content="Leetcode解题-Surrounded Regions">
+<meta property="og:url" content="http://garfieldog.github.io/2015/09/14/surrounded-regions/index.html">
 <meta property="og:site_name" content="Mew">
 <meta property="og:description" content="描述
-Given preorder and inorder traversal of a tree, construct the binary tree.
-Note:You may assume that duplicates do not exist in the tree.
-
-分析经典题，从前序遍历和中序遍历重建二叉树。前序遍历的第一个节点肯定是root，在中序遍历中查找root，可以把中序遍">
-<meta property="og:updated_time" content="2015-09-09T03:25:29.000Z">
+Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
+For example,X X X XX O O XX X O XX O X">
+<meta property="og:updated_time" content="2015-09-14T12:29:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal">
+<meta name="twitter:title" content="Leetcode解题-Surrounded Regions">
 <meta name="twitter:description" content="描述
-Given preorder and inorder traversal of a tree, construct the binary tree.
-Note:You may assume that duplicates do not exist in the tree.
-
-分析经典题，从前序遍历和中序遍历重建二叉树。前序遍历的第一个节点肯定是root，在中序遍历中查找root，可以把中序遍">
+Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.
+A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.
+For example,X X X XX O O XX X O XX O X">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +73,7 @@ Note:You may assume that duplicates do not exist in the tree.
   };
 </script>
 
-  <title> Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal | Mew </title>
+  <title> Leetcode解题-Surrounded Regions | Mew </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +199,7 @@ Note:You may assume that duplicates do not exist in the tree.
           
           
             
-              Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal
+              Leetcode解题-Surrounded Regions
             
           
         </h1>
@@ -211,8 +208,8 @@ Note:You may assume that duplicates do not exist in the tree.
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-09T10:57:25+08:00" content="2015-09-09">
-            2015-09-09
+          <time itemprop="dateCreated" datetime="2015-09-14T19:11:24+08:00" content="2015-09-14">
+            2015-09-14
           </time>
         </span>
 
@@ -237,8 +234,8 @@ Note:You may assume that duplicates do not exist in the tree.
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/" itemprop="commentsCount"></span>
+              <a href="/2015/09/14/surrounded-regions/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/14/surrounded-regions/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -253,12 +250,14 @@ Note:You may assume that duplicates do not exist in the tree.
 
       
         <span itemprop="articleBody"><h2 id="描述">描述</h2><blockquote>
-<p>Given preorder and inorder traversal of a tree, construct the binary tree.</p>
-<p>Note:<br>You may assume that duplicates do not exist in the tree.</p>
+<p>Given a 2D board containing ‘X’ and ‘O’, capture all regions surrounded by ‘X’.</p>
+<p>A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.</p>
+<p>For example,<br>X X X X<br>X O O X<br>X X O X<br>X O X X<br>After running your function, the board should be:</p>
+<p>X X X X<br>X X X X<br>X X X X<br>X O X X</p>
 </blockquote>
-<h2 id="分析">分析</h2><p>经典题，从前序遍历和中序遍历重建二叉树。前序遍历的第一个节点肯定是root，在中序遍历中查找root，可以把中序遍历分为两部分，root前面的是左子树的中序遍历，后面的是右子树的中序遍历。对应地，也可以确定前序遍历左子树和右子树的分界（通过中序遍历左子树的大小），这样递归可解。</p>
-<p>时间<code>O(n)</code>，空间平均<code>O(logn)</code>。</p>
-<h2 id="代码">代码</h2><h3 id="Python">Python</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTreeR</span><span class="params">(self, preorder, x1, y1, inorder, x2, y2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x1 &gt; y1:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> x2 &gt; y2:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">        node = TreeNode(preorder[x1])</span><br><span class="line">        root_idx = inorder.index(preorder[x1])</span><br><span class="line">        left_size = root_idx - x2</span><br><span class="line">        node.left = self.buildTreeR(preorder, x1 + <span class="number">1</span>, x1 + left_size,</span><br><span class="line">                                    inorder, x2, root_idx - <span class="number">1</span>)</span><br><span class="line">        node.right = self.buildTreeR(preorder, x1 + left_size + <span class="number">1</span>, y1,</span><br><span class="line">                                     inorder, root_idx + <span class="number">1</span>, y2)</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buildTree</span><span class="params">(self, preorder, inorder)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type preorder: List[int]</span><br><span class="line">        :type inorder: List[int]</span><br><span class="line">        :rtype: TreeNode</span><br><span class="line">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.buildTreeR(preorder, <span class="number">0</span>, len(preorder) - <span class="number">1</span>,</span><br><span class="line">                               inorder, <span class="number">0</span>, len(inorder) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="分析">分析</h2><p>有点像苹果棋的规则。如果一个<code>O</code>能够沿着<code>O</code>构成的路径通往边界，它就是安全的（不会被<code>X</code>掉）。我们从边缘四周的<code>O</code>开始做深度或广度优先遍历，把安全的<code>O</code>都标记起来。</p>
+<h2 id="代码">代码</h2><h3 id="BFS（会超时）">BFS（会超时）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(self, board, i, j)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">is_valid</span><span class="params">(x, y)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt;= m <span class="keyword">or</span> y &gt;= n <span class="keyword">or</span> board[x][y] != <span class="string">'O'</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">        m = len(board)</span><br><span class="line">        n = len(board[<span class="number">0</span>])</span><br><span class="line">        q = deque()</span><br><span class="line">        <span class="keyword">if</span> is_valid(i, j):</span><br><span class="line">            q.append((i, j))</span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            x, y = q.popleft()</span><br><span class="line">            board[x][y] = <span class="string">'*'</span></span><br><span class="line">            <span class="keyword">for</span> i, j <span class="keyword">in</span> [(x - <span class="number">1</span>, y), (x + <span class="number">1</span>, y), (x, y - <span class="number">1</span>), (x, y + <span class="number">1</span>)]:</span><br><span class="line">                <span class="keyword">if</span> is_valid(i, j):</span><br><span class="line">                    q.append((i, j))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :rtype: void Do not return anything, modify board in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        m = len(board)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        n = len(board[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m):</span><br><span class="line">            self.bfs(board, i, <span class="number">0</span>)</span><br><span class="line">            self.bfs(board, i, n - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">            self.bfs(board, <span class="number">0</span>, j)</span><br><span class="line">            self.bfs(board, m - <span class="number">1</span>, j)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span></span><br><span class="line">                <span class="keyword">elif</span> board[i][j] == <span class="string">'*'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span></span><br></pre></td></tr></table></figure>
+<h3 id="优化后的BFS">优化后的BFS</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span><br><span class="line">        :type board: List[List[str]]</span><br><span class="line">        :rtype: void Do not return anything, modify board in-place instead.</span><br><span class="line">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">is_valid</span><span class="params">(x, y)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt;= m <span class="keyword">or</span> y &gt;= n <span class="keyword">or</span> board[x][y] != <span class="string">'O'</span> <span class="keyword">or</span> visited[x][y]:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">        m = len(board)</span><br><span class="line">        <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        n = len(board[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        visited = [[<span class="keyword">False</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m)]</span><br><span class="line">        q = deque()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m):</span><br><span class="line">            <span class="keyword">if</span> is_valid(i, <span class="number">0</span>):</span><br><span class="line">                q.append((i, <span class="number">0</span>))</span><br><span class="line">            <span class="keyword">if</span> is_valid(i, n - <span class="number">1</span>):</span><br><span class="line">                q.append((i, n - <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">            <span class="keyword">if</span> is_valid(<span class="number">0</span>, j):</span><br><span class="line">                q.append((<span class="number">0</span>, j))</span><br><span class="line">            <span class="keyword">if</span> is_valid(m - <span class="number">1</span>, j):</span><br><span class="line">                q.append((m - <span class="number">1</span>, j))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            x, y = q.popleft()</span><br><span class="line">            board[x][y] = <span class="string">'*'</span></span><br><span class="line">            visited[x][y] = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">for</span> i, j <span class="keyword">in</span> [(x - <span class="number">1</span>, y), (x + <span class="number">1</span>, y), (x, y - <span class="number">1</span>), (x, y + <span class="number">1</span>)]:</span><br><span class="line">                <span class="keyword">if</span> is_valid(i, j):</span><br><span class="line">                    q.append((i, j))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(m):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(n):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span></span><br><span class="line">                <span class="keyword">elif</span> board[i][j] == <span class="string">'*'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -267,9 +266,9 @@ Note:You may assume that duplicates do not exist in the tree.
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+            <a href="/tags/BFS/" rel="tag">#BFS</a>
           
-            <a href="/tags/Tree/" rel="tag">#Tree</a>
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
         </div>
       
@@ -278,13 +277,11 @@ Note:You may assume that duplicates do not exist in the tree.
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/09/construct-binary-tree-from-inorder-and-postorder-traversal/" rel="prev">Leetcode解题-Construct Binary Tree from Inorder and Postorder Traversal</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/09/populating-next-right-pointers-in-each-node-2/" rel="next">Leetcode解题-Populating Next Right Pointers in Each Node II</a>
+              <a href="/2015/09/14/word-ladder-2/" rel="next">Leetcode解题-Word Ladder II</a>
             
           </div>
         </div>
@@ -299,10 +296,10 @@ Note:You may assume that duplicates do not exist in the tree.
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/"
-     data-title="Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal"
+        <div class="ds-share flat" data-thread-key="2015/09/14/surrounded-regions/"
+     data-title="Leetcode解题-Surrounded Regions"
      data-content=""
-     data-url="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/">
+     data-url="http://garfieldog.github.io/2015/09/14/surrounded-regions/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -332,8 +329,8 @@ Note:You may assume that duplicates do not exist in the tree.
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/"
-                   data-title="Leetcode解题-Construct Binary Tree from Preorder and Inorder Traversal" data-url="http://garfieldog.github.io/2015/09/09/construct-binary-tree-from-preorder-and-inorder-traversal/">
+              <div class="ds-thread" data-thread-key="2015/09/14/surrounded-regions/"
+                   data-title="Leetcode解题-Surrounded Regions" data-url="http://garfieldog.github.io/2015/09/14/surrounded-regions/">
               </div>
             
           </div>
@@ -438,7 +435,7 @@ Note:You may assume that duplicates do not exist in the tree.
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">3.1.</span> <span class="nav-text">Python</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BFS（会超时）"><span class="nav-number">3.1.</span> <span class="nav-text">BFS（会超时）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化后的BFS"><span class="nav-number">3.2.</span> <span class="nav-text">优化后的BFS</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
