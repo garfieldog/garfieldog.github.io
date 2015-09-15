@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/15/palindrome-partitioning-2/</loc>
+    <lastmod>2015-09-15T07:06:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/15/palindrome-partitioning/</loc>
+    <lastmod>2015-09-15T05:59:59.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/14/surrounded-regions/</loc>
     <lastmod>2015-09-14T12:29:54.000Z</lastmod>
   </url>
