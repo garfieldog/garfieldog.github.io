@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://garfieldog.github.io/2015/09/15/n-queens-2/</loc>
+    <lastmod>2015-09-15T09:16:17.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/15/n-queens/</loc>
+    <lastmod>2015-09-15T09:07:39.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/15/unique-paths-2/</loc>
+    <lastmod>2015-09-15T08:24:49.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://garfieldog.github.io/2015/09/15/unique-paths/</loc>
+    <lastmod>2015-09-15T07:39:14.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://garfieldog.github.io/2015/09/15/palindrome-partitioning-2/</loc>
     <lastmod>2015-09-15T07:06:43.000Z</lastmod>
   </url>
