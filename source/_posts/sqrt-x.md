@@ -1,6 +1,6 @@
 title: Leetcode解题-Sqrt(x)
 date: 2015-09-16 14:13:57
-tags: [Leetcode, Math, 分治法]
+tags: [Leetcode, Math, 二分法]
 categories: [编程题]
 ---
 
