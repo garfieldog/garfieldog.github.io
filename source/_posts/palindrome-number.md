@@ -56,13 +56,14 @@ class Solution(object):
         if x < 0:
             return False
         divisor = 1
-        while divisor * 10 < x:
+        while divisor * 10 <= x:
             divisor *= 10
-        while x >= 10:
-            head, x = divmod(x, divisor)
-            x, tail = divmod(x, 10)
+        while x > 0:
+            head = x / divisor
+            tail = x % 10
             if head != tail:
                 return False
+            x = (x % divisor) / 10
             divisor /= 100
         return True
 ```
